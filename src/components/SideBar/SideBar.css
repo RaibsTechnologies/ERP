@@ -104,7 +104,7 @@
   padding: 8px 20px;
   color: #9ca3af;
   font-size: 13px;
-  text-decoration: none;
+  text-decoration: none; /* ensure no underline in submenu links */
   transition: all 0.2s ease;
   border-left: 4px solid transparent;
 }
@@ -129,6 +129,14 @@
 
 .sidebar::-webkit-scrollbar-track {
   background: transparent;
+}
+.menu-btn,
+.submenu a,
+.sidebar-menu a {
+  text-decoration: none; /* removes underline */
+}
+.sidebar a {
+  text-decoration: none !important;
 }
 
 /* ===============================

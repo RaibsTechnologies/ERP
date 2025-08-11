@@ -35,7 +35,9 @@ function SideBar() {
 
       <div className="sidebar-menu">
         {/* Dashboard */}
-        <button className="menu-btn">Dashboard</button>
+        <Link to="/dashboard" className="menu-btn">
+          Dashboard
+        </Link>
 
         {/* Dynamic Menu Rendering */}
         {menus.map((menu) => (
@@ -58,6 +60,7 @@ function SideBar() {
                   <Link to="/addproduct" key={item}>
                     {item}
                   </Link>
+
                 ) : (
                   <a href="#" key={item}>
                     {item}
