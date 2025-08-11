@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SideBar.css";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { Link } from "react-router-dom"; // ✅ You already had this
+import { Link } from "react-router-dom";
 
 function SideBar() {
   const [openMenu, setOpenMenu] = useState(null);
@@ -10,7 +10,7 @@ function SideBar() {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
-  // Menu Data (unchanged)
+  // Menu Data
   const menus = [
     { name: "Product", submenu: ["Add Product", "Manage Products", "Categories"] },
     { name: "Inventory", submenu: ["Stock List", "Stock In", "Stock Out"] },
@@ -35,9 +35,7 @@ function SideBar() {
 
       <div className="sidebar-menu">
         {/* Dashboard */}
-        <Link to="/dashboard" className="menu-btn">
-          Dashboard
-        </Link>
+        <button className="menu-btn">Dashboard</button>
 
         {/* Dynamic Menu Rendering */}
         {menus.map((menu) => (
@@ -52,15 +50,17 @@ function SideBar() {
               </span>
             </button>
 
-            {/* submenu */}
+            {/* Submenu */}
             <div className={`submenu ${openMenu === menu.name ? "open" : ""}`}>
               {menu.submenu.map((item) =>
                 item === "Add Product" ? (
-                  // ✅ Changed here: use React Router Link
                   <Link to="/addproduct" key={item}>
                     {item}
                   </Link>
-
+                ) : item === "Stock List" ? (
+                  <Link to="/stocklist" key={item}>
+                    {item}
+                  </Link>
                 ) : (
                   <a href="#" key={item}>
                     {item}
