@@ -1,15 +1,22 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
 import Login from "./Components/LoginPage/Login";
-import SideBar from "./Components/SideBar/SideBar";
-
+import AddProduct from "./Components/Product/AddProduct";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/sidebar" element={<SideBar />} />
+        <Route
+          path="/sidebar"
+          element={<Layout><div>Welcome to Dashboard</div></Layout>}
+        />
+        <Route
+          path="/addproduct"
+          element={<Layout><AddProduct /></Layout>}
+        />
       </Routes>
     </Router>
   );
