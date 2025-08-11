@@ -10,24 +10,10 @@ function SideBar() {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
-  // Menu configuration with optional paths for submenus
+  // Menu Data
   const menus = [
-    { 
-      name: "Product", 
-      submenu: [
-        { label: "Add Product", path: "/addproduct" },
-        { label: "Manage Products" },
-        { label: "Categories" }
-      ] 
-    },
-    { 
-      name: "Inventory", 
-      submenu: [
-        { label: "Stock List", path: "/stocklist" },
-        { label: "Stock In" },
-        { label: "Stock Out" }
-      ] 
-    },
+    { name: "Product", submenu: ["Add Product", "Manage Products", "Categories"] },
+    { name: "Inventory", submenu: ["Stock List", "Stock In", "Stock Out"] },
     { name: "Sales", submenu: ["Orders", "Invoices", "Reports"] },
     { name: "Purchase", submenu: ["Suppliers", "Purchase Orders", "Bills"] },
     { name: "Distribution", submenu: ["Dispatch", "Logistics", "Tracking"] },
@@ -42,18 +28,16 @@ function SideBar() {
 
   return (
     <div className="sidebar">
-      {/* Header */}
       <div className="sidebar-header">
         <h1>Raibs ERP</h1>
         <img src="/vite.svg" alt="Vite logo" className="logo" />
       </div>
 
-      {/* Menu items */}
       <div className="sidebar-menu">
-        {/* Dashboard (static) */}
+        {/* Dashboard */}
         <button className="menu-btn">Dashboard</button>
 
-        {/* Dynamic Menus */}
+        {/* Dynamic Menu Rendering */}
         {menus.map((menu) => (
           <div key={menu.name} className="menu-section">
             <button
@@ -66,23 +50,20 @@ function SideBar() {
               </span>
             </button>
 
-            {/* Submenu list */}
+            {/* Submenu */}
             <div className={`submenu ${openMenu === menu.name ? "open" : ""}`}>
               {menu.submenu.map((item) =>
-                typeof item === "string" ? (
-                  // when item is just a string (no path)
-                  <a href="#" key={item}>
+                item === "Add Product" ? (
+                  <Link to="/addproduct" key={item}>
                     {item}
-                  </a>
-                ) : item.path ? (
-                  // when submenu has a path -> use router Link
-                  <Link to={item.path} key={item.label}>
-                    {item.label}
+                  </Link>
+                ) : item === "Stock List" ? (
+                  <Link to="/stocklist" key={item}>
+                    {item}
                   </Link>
                 ) : (
-                  // when submenu object has no path
-                  <a href="#" key={item.label}>
-                    {item.label}
+                  <a href="#" key={item}>
+                    {item}
                   </a>
                 )
               )}
@@ -90,7 +71,7 @@ function SideBar() {
           </div>
         ))}
 
-        {/* Static footer menu items */}
+        {/* Static items */}
         <button className="menu-btn">Reports</button>
         <button className="menu-btn">Backup</button>
       </div>

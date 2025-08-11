@@ -4,6 +4,8 @@ import Layout from "./Layout";
 import Login from "./Components/LoginPage/Login";
 import AddProduct from "./Components/Product/AddProduct/AddProduct";
 import StockList from "./Components/Inventory/StockList/StockList"; // ✅ Path now exactly correct
+import DashBoard from "./Components/DashBoard/DashBoard";
+
 
 const App = () => {
   return (
@@ -12,8 +14,8 @@ const App = () => {
         <Route path="/" element={<Login />} />
 
         <Route
-          path="/sidebar"
-          element={<Layout><div>Welcome to Dashboard</div></Layout>}
+          path="/dashboard"
+          element={<Layout><DashBoard /></Layout>}
         />
 
         <Route

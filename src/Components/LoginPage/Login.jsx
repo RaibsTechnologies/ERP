@@ -17,7 +17,7 @@ const Login = () => {
 
     if (email === validEmail && password === validPassword) {
       setMessage("Login Successful!");
-     navigate("/sidebar"); // Redirect to sidebar page
+     navigate("/dashboard");// Redirect to sidebar page
     } else {
       setMessage("Incorrect email or password.");
     }
