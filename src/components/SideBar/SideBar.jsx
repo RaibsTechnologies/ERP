@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SideBar.css";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-
+import { Link } from "react-router-dom"; // Import Link
 
 function SideBar() {
   const [openMenu, setOpenMenu] = useState(null);
@@ -45,26 +45,27 @@ function SideBar() {
               onClick={() => toggleMenu(menu.name)}
             >
               {menu.name}
-              <span
-                className={`arrow ${openMenu === menu.name ? "open" : ""}`}
-              >
-               <MdOutlineKeyboardArrowRight />
- 
+              <span className={`arrow ${openMenu === menu.name ? "open" : ""}`}>
+                <MdOutlineKeyboardArrowRight />
               </span>
             </button>
-            <div
-              className={`submenu ${openMenu === menu.name ? "open" : ""}`}
-            >
-              {menu.submenu.map((item) => (
-                <a href="#" key={item}>
-                  {item}
-                </a>
-              ))}
+            <div className={`submenu ${openMenu === menu.name ? "open" : ""}`}>
+              {menu.submenu.map((item) =>
+                item === "Add Product" ? (
+                  <Link to="/addproduct" key={item}>
+                    {item}
+                  </Link>
+                ) : (
+                  <a href="#" key={item}>
+                    {item}
+                  </a>
+                )
+              )}
             </div>
           </div>
         ))}
-         <button className="menu-btn">Reports</button>
-          <button className="menu-btn">Backup</button>
+        <button className="menu-btn">Reports</button>
+        <button className="menu-btn">Backup</button>
       </div>
     </div>
   );

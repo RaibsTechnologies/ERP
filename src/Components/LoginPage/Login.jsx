@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState(""); // for success/error messages
+  const navigate = useNavigate();
 
   // Predefined valid credentials (change as needed)
   const validEmail = "RaibsTech@gmai.com";
@@ -15,6 +17,7 @@ const Login = () => {
 
     if (email === validEmail && password === validPassword) {
       setMessage("Login Successful!");
+     navigate("/sidebar"); // Redirect to sidebar page
     } else {
       setMessage("Incorrect email or password.");
     }
