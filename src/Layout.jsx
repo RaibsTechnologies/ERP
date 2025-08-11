@@ -1,15 +1,15 @@
 import React from "react";
 import SideBar from "./Components/SideBar/SideBar";
+import NavBar from "./Components/NavBar/NavBar";
 import "./Layout.css";
 
 const Layout = ({ children }) => {
   return (
     <div className="layout">
-      <div className="sidebar">
-        <SideBar />
-      </div>
-      <div className="main-content">
-        {children}
+      <SideBar />
+      <div className="main-area">
+        <NavBar />
+        <div className="content">{children}</div>
       </div>
     </div>
   );
