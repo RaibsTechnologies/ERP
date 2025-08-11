@@ -1,0 +1,45 @@
+.layout {
+  display: flex;
+}
+
+/* Sidebar - fixed on left */
+.sidebar {
+  width: 240px;
+  background-color: #1e1e2f;
+  color: white;
+  flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+/* Main area next to sidebar */
+.main-area {
+  margin-left: 240px; /* Push after sidebar */
+  width: calc(100% - 240px);
+}
+
+/* Navbar fixed at top, starting after sidebar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 240px; /* Start after sidebar */
+  width: calc(100% - 240px);
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Main content area - below navbar */
+.content {
+  margin-top: 60px; /* Same as navbar height */
+  padding: 20px;
+  background-color: #f5f6fa;
+  min-height: calc(100vh - 60px);
+}

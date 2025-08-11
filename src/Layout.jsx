@@ -1,12 +1,15 @@
 import React from "react";
 import SideBar from "./Components/SideBar/SideBar";
+import NavBar from "./Components/NavBar/NavBar";
+import "./Layout.css";
 
 const Layout = ({ children }) => {
   return (
-    <div style={{ display: "flex" }}>
+    <div className="layout">
       <SideBar />
-      <div style={{ flex: 1, padding: "20px", background: "#f5f5f5" }}>
-        {children}
+      <div className="main-area">
+        <NavBar />
+        <div className="content">{children}</div>
       </div>
     </div>
   );
