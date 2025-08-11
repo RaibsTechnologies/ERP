@@ -1,0 +1,24 @@
+/* Layout.css */
+.layout {
+  display: flex;
+  height: 100vh; /* Full height */
+}
+
+.sidebar {
+  width: 240px; /* Fixed sidebar width */
+  background-color: #1e1e2f;
+  color: white;
+  flex-shrink: 0; /* Prevent shrinking */
+  position: fixed; /* Fixed position */
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 240px; /* Same as sidebar width */
+  padding: 20px;
+  background-color: #f5f6fa;
+  overflow-y: auto;
+}
