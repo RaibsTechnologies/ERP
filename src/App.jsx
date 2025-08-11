@@ -1,16 +1,13 @@
 
+import React from "react";
+import Login from "./Components/LoginPage/Login";
 
-import './App.css'
-import SideBar from './components/SideBar/SideBar'
-
-function App() {
-
-
-  return (
-    <>
+const App = () => {
+  return <>
+    <Login />  
     <SideBar />  
-    </>
-  )
-}
+  </>
+};
 
-export default App
+export default App;
+
