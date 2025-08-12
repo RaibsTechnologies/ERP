@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "./Components/SideBar/SideBar";
+import SideBar from "./components/SideBar/SideBar";
 import NavBar from "./Components/NavBar/NavBar";
 import "./Layout.css";
 

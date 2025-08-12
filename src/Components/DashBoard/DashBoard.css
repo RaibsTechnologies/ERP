@@ -9,8 +9,8 @@
 /* Left circular shortcut buttons */
 .shortcut-grid {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  gap: 20px;
+  grid-template-columns: repeat(4, 80px); /* smaller width */
+  gap: 16px;
 }
 
 .shortcut-card {
@@ -22,26 +22,33 @@
 }
 
 .shortcut-icon {
-  width: 70px;
-  height: 70px;
-  background-color: #222;
-  color: white;
+  width: 56px; /* reduced from 70px */
+  height: 56px;
+  background-color: #f2f2f2;
+  color: #333;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  margin-bottom: 8px;
+  font-size: 22px; /* reduced from 28px */
+  margin-bottom: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .shortcut-card p {
-  font-size: 14px;
-  color: #333;
+  font-size: 12px;
+  color: #444;
 }
 
 .shortcut-card.highlight .shortcut-icon {
-  background-color: #c8f5e3;
+  background-color: #e7faf3;
   color: #0a8f5c;
+}
+
+/* Hover effect for shortcut buttons */
+.shortcut-card:hover .shortcut-icon {
+  background-color: #0a8f5c;
+  color: white;
 }
 
 /* Right stats section */
@@ -49,50 +56,51 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 100px;
-  gap: 15px;
+  grid-auto-rows: 90px; /* reduced height */
+  gap: 12px;
 }
 
 .stat-card {
-  background-color: #e6f9f1;
-  border-radius: 8px;
-  padding: 15px;
+  background-color: #f7fbf9;
+  border-radius: 6px;
+  padding: 12px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
+  border: 1px solid #e2f2eb;
 }
 
 .stat-icon {
-  font-size: 26px;
+  font-size: 20px; /* reduced from 26px */
   color: #0a8f5c;
 }
 
 .stat-info h4 {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px; /* smaller text */
   color: #0a8f5c;
 }
 
 .stat-info p {
   margin: 2px 0 0;
-  font-size: 14px;
-  font-weight: bold;
-  color: black;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
 }
 
 .details-button {
   background-color: #0fb36a;
   color: white;
-  padding: 10px;
+  padding: 8px 14px;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 4px;
+  font-size: 14px;
   cursor: pointer;
 }
 
