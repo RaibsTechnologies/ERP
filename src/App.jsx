@@ -7,6 +7,7 @@ import ProductList from "./Components/Product/AddProduct/ProductList/ProductList
 import ComboProductList from "./Components/Product/AddProduct/ProductList/ComboProductList";
 import StockList from "./Components/Inventory/StockList/StockList";
 import BrandList from "./Components/Product/AddProduct/Brand/BrandList";
+import ModelList from "./Components/Product/AddProduct/Model/ModelList";
 import DashBoard from "./Components/DashBoard/DashBoard";
 
 const App = () => {
@@ -62,6 +63,16 @@ const App = () => {
           element={
             <Layout>
               <StockList />
+            </Layout>
+          }
+        />
+
+        {/* Model List */}
+        <Route
+          path="/modelList"
+          element={
+            <Layout>
+              <ModelList />
             </Layout>
           }
         />
