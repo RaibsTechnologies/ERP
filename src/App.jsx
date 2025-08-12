@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Login from "./Components/LoginPage/Login";
 import AddProduct from "./Components/Product/AddProduct/AddProduct";
-import StockList from "./Components/Inventory/StockList/StockList";
-import DashBoard from "./Components/DashBoard/DashBoard";
 import ProductList from "./Components/Product/ProductList/ProductList";
 import ComboProductList from "./Components/Product/ProductList/ComboProductList";
+import StockList from "./Components/Inventory/StockList/StockList";
+import BrandList from "./Components/Product/AddProduct/Brand/BrandList";
+import ModelList from "./Components/Product/AddProduct/Model/ModelList";
+import DashBoard from "./Components/DashBoard/DashBoard";
 
 const App = () => {
   return (
@@ -65,7 +67,27 @@ const App = () => {
           }
         />
 
-        {/* 404 fallback */}
+        {/* Model List */}
+        <Route
+          path="/modelList"
+          element={
+            <Layout>
+              <ModelList />
+            </Layout>
+          }
+        />
+
+        {/* Brand List */}
+        <Route
+          path="/brandlist"
+          element={
+            <Layout>
+              <BrandList />
+            </Layout>
+          }
+        />
+
+        {/* 404 Fallback */}
         <Route
           path="*"
           element={<h2 style={{ textAlign: "center" }}>Page not found</h2>}
