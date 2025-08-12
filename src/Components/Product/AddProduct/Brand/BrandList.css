@@ -1,0 +1,205 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.brand-container {
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Title */
+.title {
+  color: #3CCE7B;
+  font-weight: bold;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.page-size {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+}
+
+.add-btn {
+  background: #3CCE7B;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-btn:hover {
+  background: #2eb86a;
+}
+
+.searchbar {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 20px;
+}
+
+.searchbar input {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Action Icons */
+.action-icons {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.icon-btn {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+  background: #e9ecef;
+  color: #333;
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Table */
+.brand-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 10px;
+  background: white;
+  border: 1px solid #eee;
+}
+
+.brand-table th,
+.brand-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.brand-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.brand-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.no-brands {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Status Badge */
+.status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.inactive {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Action Select */
+.action-select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.action-select:focus {
+  outline: none;
+  border-color: #3CCE7B;
+}
+
+/* Footer */
+.table-footer {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.table-footer p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .searchbar {
+    order: 3;
+    flex: 1 1 100%;
+    margin: 10px 0;
+    max-width: none;
+  }
+  
+  .action-icons {
+    margin-left: 0;
+  }
+  
+  .brand-table {
+    font-size: 12px;
+  }
+  
+  .brand-table th,
+  .brand-table td {
+    padding: 8px 10px;
+  }
+}
