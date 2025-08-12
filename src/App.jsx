@@ -8,6 +8,7 @@ import ComboProductList from "./Components/Product/AddProduct/ProductList/ComboP
 import StockList from "./Components/Inventory/StockList/StockList";
 import BrandList from "./Components/Product/AddProduct/Brand/BrandList";
 import ModelList from "./Components/Product/AddProduct/Model/ModelList";
+import UnitTypeList from "./Components/Product/AddProduct/UnitType/UnitTypeList";
 import DashBoard from "./Components/DashBoard/DashBoard";
 
 const App = () => {
@@ -86,6 +87,15 @@ const App = () => {
             </Layout>
           }
         />
+
+        <Route
+  path="/unittype"      // or "/unit-type"
+  element={
+    <Layout>
+      <UnitTypeList />
+    </Layout>
+  }
+/>
 
         {/* 404 Fallback */}
         <Route
