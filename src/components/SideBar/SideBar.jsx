@@ -24,7 +24,7 @@ const [openMainMenu, setOpenMainMenu] = useState(null);
         { name: "Add Product", link: "/addproduct" },
         {name: "Product List",link: "/productlist" },
         { name: "Draft Product List", link: "/Draft Product List" },
-        { name: "Category", link: "/category" },
+        { name: "Category", link: "/Category" },
         { name: "Brand", link: "/Brand" },
         { name: "Model", link: "/Model" },
         { name: "Unit Type", link: "/Unit Type" },

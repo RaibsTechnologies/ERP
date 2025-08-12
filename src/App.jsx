@@ -7,6 +7,7 @@ import StockList from "./Components/Inventory/StockList/StockList";
 import DashBoard from "./Components/DashBoard/DashBoard";
 import ProductList from "./Components/Product/AddProduct/ProductList/ProductList";
 import ComboProductList from "./Components/Product/AddProduct/ProductList/ComboProductList";
+import Category from "./Components/Product/AddProduct/Category/Category";
 
 const App = () => {
   return (
@@ -61,6 +62,15 @@ const App = () => {
           element={
             <Layout>
               <StockList />
+            </Layout>
+          }
+        />
+        {/* Add Category */}
+        <Route
+          path="/Category"
+          element={
+            <Layout>
+              <Category />
             </Layout>
           }
         />
