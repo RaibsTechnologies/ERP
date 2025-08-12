@@ -5,8 +5,8 @@ import Login from "./Components/LoginPage/Login";
 import AddProduct from "./Components/Product/AddProduct/AddProduct";
 import StockList from "./Components/Inventory/StockList/StockList";
 import DashBoard from "./Components/DashBoard/DashBoard";
-import ProductList from "./Components/Product/AddProduct/ProductList/ProductList";
-import ComboProductList from "./Components/Product/AddProduct/ProductList/ComboProductList";
+import ProductList from "./Components/Product/ProductList/ProductList";
+import ComboProductList from "./Components/Product/ProductList/ComboProductList";
 
 const App = () => {
   return (
