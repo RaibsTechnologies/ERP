@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import Login from "./Components/LoginPage/Login";
 import AddProduct from "./Components/Product/AddProduct/AddProduct";
-import ProductList from "./Components/Product/AddProduct/ProductList/ProductList";
-import ComboProductList from "./Components/Product/AddProduct/ProductList/ComboProductList";
+import ProductList from "./Components/Product/ProductList/ProductList";
+import ComboProductList from "./Components/Product/ProductList/ComboProductList";
 import StockList from "./Components/Inventory/StockList/StockList";
-import BrandList from "./Components/Product/AddProduct/Brand/BrandList";
-import ModelList from "./Components/Product/AddProduct/Model/ModelList";
-import UnitTypeList from "./Components/Product/AddProduct/UnitType/UnitTypeList";
+import BrandList from "./Components/Product/Brand/BrandList";
+import ModelList from "./Components/Product/Model/ModelList";
+import UnitTypeList from "./Components/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components/DashBoard/DashBoard";
+import Category from "./Components/Product/Category/Category";
 
 const App = () => {
   return (
@@ -64,6 +65,15 @@ const App = () => {
           element={
             <Layout>
               <StockList />
+            </Layout>
+          }
+        />
+        {/* Add Category */}
+        <Route
+          path="/Category"
+          element={
+            <Layout>
+              <Category />
             </Layout>
           }
         />

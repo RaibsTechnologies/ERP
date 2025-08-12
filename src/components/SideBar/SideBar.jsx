@@ -22,15 +22,15 @@ function SideBar() {
       name: "Product",
       submenu: [
         { name: "Add Product", link: "/addproduct" },
-        { name: "Product List", link: "/productlist" },
-        { name: "Draft Product List", link: "/draftproductlist" },
-        { name: "Category", link: "/category" },
-        { name: "Brand", link: "/brandlist" },
-        { name: "Model", link: "/modellist" },          // corrected link
-        { name: "Unit Type", link: "/unittype" },
-        { name: "Variant", link: "/variant" },
-        { name: "Print Label", link: "/printlabel" }
-      ]
+        {name: "Product List",link: "/productlist" },
+        { name: "Draft Product List", link: "/Draft Product List" },
+        { name: "Category", link: "/Category" },
+        { name: "Brand", link: "/Brand" },
+        { name: "Model", link: "/Model" },
+        { name: "Unit Type", link: "/Unit Type" },
+        { name: "Variant", link: "/Variant" },
+        { name: "Print Label", link: "/Print Label" },
+      ],
     },
     {
       name: "Inventory",

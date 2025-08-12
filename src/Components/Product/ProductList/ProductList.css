@@ -1,0 +1,242 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+}
+
+/* Container */
+.product-container {
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Title */
+.title {
+  color: #0a8f5c;
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  text-decoration: none;
+  background: #f2f2f2;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tab.active {
+  background: #e7faf3;
+  color: #0a8f5c;
+  border: 1px solid #ccefe1;
+}
+
+.tab:hover {
+  background: #0a8f5c;
+  color: white;
+}
+
+/* Top Bar */
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* space out sections */
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.page-size {
+  font-size: 13px;
+  color: #666;
+  width: 100px;
+  border: 0.5px solid #ccc;
+}
+/* Container to hold the custom select */
+
+
+.top-bar select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Create the dropdown list effect */
+.top-bar select:focus {
+  outline: none;
+  /* border-color: #0a8f5c; */
+  box-shadow: 0 0 5px rgba(10, 143, 92, 0.5);
+  /* transform: scale(1.05); zoom effect */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* Add New Product button — pill style */
+.add-btn {
+  background: #0fb36a;
+  color: #fff;
+  padding: 8px 18px;
+  border: none;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+.add-btn:hover {
+  background: #0a8f5c;
+}
+
+/* Search bar — pill shape with icon */
+/* Search bar — no border, animated underline on hover */
+.searchbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #fff;
+  border: none; /* removed border */
+  border-radius: 0; /* square edges or adjust if you still want rounded */
+  max-width: 280px;
+  flex: 1;
+  position: relative; /* for the underline pseudo-element */
+}
+
+.searchbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0a8f5c; /* underline color */
+  transition: width 0.3s ease;
+}
+
+.searchbar:hover::after {
+  width: 100%; /* expands underline from left to right */
+}
+
+.searchbar input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 13px;
+  width: 100%;
+}
+
+/* Optional: add cursor pointer effect when hovering search area */
+.searchbar:hover {
+  cursor: text;
+}
+
+
+/* Action Icons — grouped in pill */
+.action-icons {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.icon-btn {
+  background: white;
+  border: none;
+  padding: 8px 12px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.icon-btn:hover {
+  background: #f0f0f0;
+  color: #0a8f5c;
+}
+.icon-btn:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+/* Table */
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.product-table th,
+.product-table td {
+  padding: 8px 10px;
+  border: 1px solid #e2f2eb;
+}
+.product-table th {
+  background: #f7fbf9;
+  font-weight: 500;
+  color: #0a8f5c;
+}
+.product-table tbody tr:hover {
+  background-color: #e7faf3;
+}
+.product-image {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.no-products {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Action Buttons in Table */
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 3px;
+  font-size: 15px;
+  padding: 4px;
+  color: #0a8f5c;
+}
+.action-btn.edit:hover {
+  color: #0fb36a;
+}
+.action-btn.delete:hover {
+  color: #ff4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .searchbar {
+    order: 3;
+    width: 100%;
+    max-width: none;
+  }
+}
