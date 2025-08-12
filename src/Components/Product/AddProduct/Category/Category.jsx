@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaSearch, FaPrint, FaUpload, FaColumns } from "react-icons/fa";
 import "./Category.css";
 
 function CategoryPage() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/categories") // replace with your backend API
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
+      .catch((err) => console.error("Error fetching categories:", err));
+  }, []);
+
   return (
     <div className="category-container">
       {/* Header */}
@@ -57,7 +66,7 @@ function CategoryPage() {
       </div>
 
       {/* Table */}
-       <table className="category-table">
+      <table className="category-table">
         <thead>
           <tr>
             <th>↓ SL</th>
@@ -70,6 +79,25 @@ function CategoryPage() {
             <th>↓ Action</th>
           </tr>
         </thead>
+        <tbody>
+          {categories.map((cat, index) => (
+            <tr key={cat.id}>
+              <td>{index + 1}</td>
+              <td>
+                <img src={cat.image} alt={cat.name} />
+              </td>
+              <td>{cat.name}</td>
+              <td>{cat.code}</td>
+              <td>{cat.parent}</td>
+              <td>{cat.description}</td>
+              <td>{cat.status}</td>
+              <td>
+                {/* Add your edit/delete buttons here */}
+                Edit | Delete
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
