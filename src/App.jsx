@@ -13,6 +13,7 @@ import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
+import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
 
 
 const App = () => {
@@ -58,6 +59,16 @@ const App = () => {
           element={
             <Layout>
               <ComboProductList />
+            </Layout>
+          }
+        />
+
+        {/* Add Opening Stock */}
+        <Route
+          path="/addopeningstock"
+          element={
+            <Layout>
+              <AddOpeningStock />
             </Layout>
           }
         />
