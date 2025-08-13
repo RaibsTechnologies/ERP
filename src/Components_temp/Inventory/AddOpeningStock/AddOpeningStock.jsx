@@ -89,10 +89,11 @@ export default function AddOpeningStock() {
           />
         </div>
       </div>
-
-      <button className="save-btn" onClick={handleSave}>
-        ✓ Save
-      </button>
+      <div className="save-btn">
+        <button className="btn" onClick={handleSave}>
+          ✓ Save
+        </button>
+      </div>
 
       {/* Opening Stock List */}
       <h2 className="section-title">Opening Stock List</h2>
@@ -109,10 +110,16 @@ export default function AddOpeningStock() {
           <input type="text" placeholder="SEARCH" />
         </div>
 
-        <div className="table-icons">
-          <FaPrint title="Print" />
-          <FaUpload title="Export" />
-          <FaColumns title="Columns" />
+        <div className="icon-buttons">
+            <button className="icon-btn">
+              <FaPrint />
+            </button>
+            <button className="icon-btn">
+              <FaUpload />
+            </button>
+            <button className="icon-btn">
+              <FaColumns />
+            </button>
         </div>
       </div>
 
