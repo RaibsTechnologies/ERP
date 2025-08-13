@@ -11,10 +11,8 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
-
 import DraftProduct from "./Components_temp/Product/DraftProduct/DraftProduct";
 import ComboDraftProductList from "./Components_temp/Product/DraftProduct/ComboDraftProduct";
-
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
 import SalesList from "./Components_temp/Sales/NewSale/SaleList"; 
@@ -28,6 +26,14 @@ import SaleReturn from "./Components_temp/Sales/SaleReturn/SaleReturn";
 import CanceledInvoice from "./Components_temp/Sales/CanceledInvoice/CanceledInvoice";
 import DeleteReqSale from "./Components_temp/Sales/DeleteReqSale/DeleteReqSale";
 import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
+import RoutePlanner from "./Components_temp/Distribution/Route Planner/RoutePlanner";
+import SalesInvoice from "./Components_temp/Distribution/SalesInvoice/SalesInvoice";
+import CollectPayment from "./Components_temp/Distribution/PendingPayment/CollectPayment";
+import ApprovedPayment from "./Components_temp/Distribution/ApprovedPayment/ApprovedPayment";
+import SalesTarget from "./Components_temp/Distribution/SalesTarget/SalesTarget";
+import UserAssign from "./Components_temp/Distribution/Product Assign/UserAssign";
+import StockAdjust from "./Components_temp/Distribution/Stock Assign/StockAssign";
+import RouteList from "./Components_temp/Distribution/Route/RouteList";
 import ReceivePurchaseOrders from "./Components_temp/Inventory/ReceivePurchaseOrders/ReceivePurchaseOrders";
 import ProductCostingSales from "./Components_temp/Inventory/ProductCostingSales/ProductCostingSales";
 import StockTransfer from "./Components_temp/Inventory/StockTransfer/StockTransfer";
@@ -250,14 +256,22 @@ const App = () => {
   />
   <Route path="/SalesList" element={<Layout><SalesList /></Layout>} />
   <Route path="/invoicelist" element={<Layout><InvoiceList /></Layout>} />
-   <Route path="/conditionalsales" element={<Layout><ConditionalSaleList /></Layout>} />
-   <Route path="/recurringinvoice" element={<Layout><RecurringInvoice /></Layout>} />
-    <Route path="/possale" element={<Layout><POSSale/></Layout>} />
-    <Route path="/allinvoice" element={<Layout><Allinvoice/></Layout>} />
-     <Route path="/quotations" element={<Layout><Quotations/></Layout>} />
-     <Route path="/salereturn" element={<Layout><SaleReturn/></Layout>} />
-      <Route path="/canceledinvoice" element={<Layout><CanceledInvoice/></Layout>} />
-       <Route path="/deleterequestedsale" element={<Layout><DeleteReqSale/></Layout>} />
+  <Route path="/conditionalsales" element={<Layout><ConditionalSaleList /></Layout>} />
+  <Route path="/recurringinvoice" element={<Layout><RecurringInvoice /></Layout>} />
+  <Route path="/possale" element={<Layout><POSSale/></Layout>} />
+  <Route path="/allinvoice" element={<Layout><Allinvoice/></Layout>} />
+  <Route path="/quotations" element={<Layout><Quotations/></Layout>} />
+  <Route path="/salereturn" element={<Layout><SaleReturn/></Layout>} />
+  <Route path="/canceledinvoice" element={<Layout><CanceledInvoice/></Layout>} />
+  <Route path="/deleterequestedsale" element={<Layout><DeleteReqSale/></Layout>} />
+  <Route path="/routeplanner" element={<Layout><RoutePlanner/></Layout>} />
+  <Route path="/salesinvoice" element={<Layout><SalesInvoice /></Layout>} />
+  <Route path="/pendingpayments" element={<Layout><CollectPayment /></Layout>} />
+  <Route path="/approvedpayments" element={<Layout><ApprovedPayment /></Layout>} />
+  <Route path="/generate" element={<Layout><SalesTarget /></Layout>} />
+  <Route path="/userassign" element={<Layout><UserAssign /></Layout>} />
+  <Route path="/stockadjust" element={<Layout><StockAdjust /></Layout>} />
+  <Route path="/route" element={<Layout><RouteList /></Layout>} />
  
 
 

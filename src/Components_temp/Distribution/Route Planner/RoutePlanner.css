@@ -1,0 +1,56 @@
+.routeplanner-container {
+  background: #fff;
+  padding: 24px 32px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* Page title */
+.main-title {
+  font-size: 1.23rem;
+  font-weight: 700;
+  color: #16bd6a;
+  letter-spacing: 0.03em;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+/* Table */
+.table-scroll-area {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 6px;
+}
+.routeplanner-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+.routeplanner-table th, .routeplanner-table td {
+  padding: 13px 12px;
+  border: 1px solid #eee;
+  text-align: left;
+  font-size: 15px;
+}
+.routeplanner-table th {
+  background: #f6fbfa;
+  font-weight: 600;
+  color: #16bd6a;
+  white-space: nowrap;
+}
+.routeplanner-table tbody tr:hover {
+  background: #f8f9fa;
+}
+.empty {
+  text-align: center;
+  color: #bbb;
+  height: 44px;
+}
+
+@media (max-width: 700px) {
+  .routeplanner-container { padding: 12px; }
+  .main-title { font-size: 1.01rem; }
+  .table-scroll-area { border-radius: 2px; }
+}
