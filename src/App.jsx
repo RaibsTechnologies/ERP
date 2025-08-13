@@ -11,6 +11,9 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
+import VariantList from "./Components_temp/Product/Variant/VariantList";
+import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
+
 
 const App = () => {
   return (
@@ -105,7 +108,24 @@ const App = () => {
       <UnitTypeList />
     </Layout>
   }
+/>    
+<Route
+  path="/variantList"      // or "/variant-list"
+  element={
+    <Layout>
+      <VariantList />
+    </Layout>
+  }
 />
+<Route
+  path="/printLabel"
+  element={
+    <Layout>
+      <PrintLabelList />
+    </Layout>
+  }
+  />
+ 
 
         {/* 404 Fallback */}
         <Route
