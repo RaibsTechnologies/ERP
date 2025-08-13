@@ -46,7 +46,7 @@ function ModelList() {
 
   return (
     <div className="model-container">
-      <h2 className="title">Model</h2>
+      <h3 className="heading">Model</h3>
 
       <div className="top-bar">
         <select value={pageSize} onChange={(e) => setPageSize(e.target.value)} className="page-size">

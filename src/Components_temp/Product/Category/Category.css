@@ -1,19 +1,33 @@
-/* Category.css */
-
+/* Container */
 .category-container {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: #fff;
-}
-
-.category-header h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 20px 24px;
   color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Top Controls Row */
+/* Heading */
+.heading {
+  color: #15d38b;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Controls Row */
+.controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Left Controls */
 .category-controls {
   display: flex;
   align-items: center;
@@ -21,92 +35,139 @@
 }
 
 .category-controls select {
-  padding: 5px 8px;
+  padding: 8px 12px;
+  width: 100px;
+  border: 1px solid #e0e0e0;
   border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.add-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 20px;
-  cursor: pointer;
+  background-color: #fafafa;
   font-size: 14px;
-  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.category-controls select:focus {
+  border-color: #15d38b;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(21, 211, 139, 0.1);
 }
 
+/* Add Button */
+.add-btn {
+  background: #15d38b;
+  color: #fff;
+  padding: 7px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
 .add-btn:hover {
-  background-color: #0056b3;
+  background: #12b97b;
 }
 
 /* Search box */
 .search-box {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  padding: 4px 8px;
-  border-radius: 20px;
+  gap: 6px;
+  padding: 6px 12px;
   background: #fff;
-  width: 200px;
+  max-width: 280px;
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
-
+.search-box:focus-within {
+  border-color: #15d38b;
+  box-shadow: 0 0 0 2px rgba(21, 211, 139, 0.1);
+}
 .search-box input {
   border: none;
   outline: none;
-  flex: 1;
+  background: none;
+  font-size: 13px;
+  width: 100%;
+}
+.search-icon {
+  color: #888;
   font-size: 14px;
 }
 
-.search-icon {
-  color: #888;
-  margin-right: 6px;
-}
-
-/* Right icon buttons group */
-.icon-group {
+/* Right Icons */
+.icon-buttons {
   display: flex;
   align-items: center;
-  border: 1px solid #ddd;
+  border: 1px solid #e0e0e0;
   border-radius: 20px;
   overflow: hidden;
 }
-
-.icon-group button {
-  background: none;
+.icon-btn {
+  background: #fff;
   border: none;
   padding: 8px 12px;
+  color: #666;
   cursor: pointer;
-  font-size: 14px;
-  color: #555;
+  transition: all 0.2s ease;
+}
+.icon-btn:hover {
+  background: #f0f0f0;
+  color: #15d38b;
+}
+.icon-btn:not(:last-child) {
+  border-right: 1px solid #e0e0e0;
 }
 
-.icon-group button:hover {
-  background-color: #f0f0f0;
-}
-
-/* Table styling */
+/* Table */
 .category-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 15px;
+  font-size: 13px;
+  margin-top: 10px;
 }
-
 .category-table th,
 .category-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  padding: 8px 10px;
+  border: 1px solid #e6f5ef;
   text-align: left;
 }
-
 .category-table th {
-  background-color: #f5f5f5;
-  font-weight: bold;
+  background: #f7fbf9;
+  font-weight: 500;
+  color: #15d38b;
+}
+.category-table tbody tr:hover {
+  background-color: #f0fcf7;
 }
 
+/* Category image in table */
 .category-table img {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
   border-radius: 6px;
+}
+
+/* No Data */
+.no-categories {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .controls-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .search-box {
+    order: 3;
+    width: 100%;
+    max-width: none;
+  }
 }
