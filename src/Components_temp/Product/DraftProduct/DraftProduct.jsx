@@ -1,44 +1,54 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./productList.css";
+import "./DraftProduct.css";
 
-function ComboProductList() {
-  const [comboProducts, setComboProducts] = useState([]);
+function ProductList() {
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const location = useLocation();
 
-  // Dummy data for combo products
-  const demoComboProducts = [
+  // Dummy fallback data for regular products
+  const demoProducts = [
     {
       id: 1,
       image: "https://via.placeholder.com/50",
-      name: "Combo Pack A",
-      sku: "COMBO001",
-      price: 250,
-      regularPrice: 280,
-      totalProduct: 3,
-      status: "Active",
-      enable: true,
+      name: "Sample Product A",
+      sku: "SKU001",
+      brand: "BrandX",
+      model: "ModelA",
+      purchasePrice: 100,
+      sellingPrice: 120,
+      minPrice: 90,
+      stock: 50,
+      supplier: "Supplier1",
+      productType: "TypeA",
+      category: "CategoryA",
+      stockAlert: 5,
     },
     {
       id: 2,
       image: "https://via.placeholder.com/50",
-      name: "Combo Pack B",
-      sku: "COMBO002",
-      price: 400,
-      regularPrice: 450,
-      totalProduct: 5,
-      status: "Inactive",
-      enable: false,
+      name: "Sample Product B",
+      sku: "SKU002",
+      brand: "BrandY",
+      model: "ModelB",
+      purchasePrice: 150,
+      sellingPrice: 200,
+      minPrice: 130,
+      stock: 20,
+      supplier: "Supplier2",
+      productType: "TypeB",
+      category: "CategoryB",
+      stockAlert: 3,
     },
   ];
 
   useEffect(() => {
-    const apiUrl = "https://your-backend-api.com/api/combo-products"; // Replace when backend is ready
+    const apiUrl = "https://your-backend-api.com/api/products"; // Replace when backend is ready
 
-    async function fetchComboProducts() {
+    async function fetchProducts() {
       try {
         setLoading(true);
         const response = await fetch(apiUrl);
@@ -46,34 +56,34 @@ function ComboProductList() {
         const data = await response.json();
 
         if (Array.isArray(data)) {
-          setComboProducts(data);
-        } else if (Array.isArray(data.comboProducts)) {
-          setComboProducts(data.comboProducts);
+          setProducts(data);
+        } else if (Array.isArray(data.products)) {
+          setProducts(data.products);
         } else {
-          setComboProducts([]);
+          setProducts([]);
         }
         setError(null);
       } catch (err) {
-        console.warn("Error fetching combo products:", err);
-        setError("Could not fetch combo products — showing sample data.");
-        setComboProducts(demoComboProducts);
+        console.warn("Error fetching products:", err);
+        setError("Could not fetch products — showing sample data.");
+        setProducts(demoProducts);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchComboProducts();
+    fetchProducts();
   }, []);
 
-  const filteredProducts = comboProducts.filter(
-    (combo) =>
-      combo.name.toLowerCase().includes(search.toLowerCase()) ||
-      combo.sku.toLowerCase().includes(search.toLowerCase())
+  const filteredProducts = products.filter(
+    (product) =>
+      product.name.toLowerCase().includes(search.toLowerCase()) ||
+      product.sku.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <div className="product-container">
-      <h2 className="title">Product</h2>
+      <h2 className="heading">Product</h2>
 
       {/* Tabs */}
       <div className="tabs">
@@ -135,9 +145,9 @@ function ComboProductList() {
         </div>
       </div>
 
-      {/* Combo Products Table */}
+      {/* Regular Products Table */}
       {loading ? (
-        <p style={{ textAlign: "center", padding: "20px" }}>Loading combo products...</p>
+        <p style={{ textAlign: "center", padding: "20px" }}>Loading products...</p>
       ) : (
         <table className="product-table">
           <thead>
@@ -146,47 +156,52 @@ function ComboProductList() {
               <th>Image</th>
               <th>Name</th>
               <th>SKU</th>
-              <th>Price</th>
-              <th>Regular Price</th>
-              <th>Total Product</th>
-              <th>Status</th>
-              <th>Enable</th>
-              <th>Action</th>
+              <th>Brand</th>
+              <th>Model</th>
+              <th>Purchase Price</th>
+              <th>Selling Price</th>
+              <th>Min Price</th>
+              <th>Stock</th>
+              <th>Supplier</th>
+              <th>Product Type</th>
+              <th>Category</th>
+              <th>Stock Alert</th>
             </tr>
           </thead>
           <tbody>
             {filteredProducts.length === 0 ? (
               <tr>
-                <td colSpan={10} className="no-products">
-                  No combo products found.
+                <td colSpan={14} className="no-products">
+                  No products found.
                 </td>
               </tr>
             ) : (
-              filteredProducts.map((combo, idx) => (
-                <tr key={combo.id || idx}>
+              filteredProducts.map((product, idx) => (
+                <tr key={product.id || idx}>
                   <td>{idx + 1}</td>
                   <td>
-                    {combo.image ? (
+                    {product.image ? (
                       <img
-                        src={combo.image}
-                        alt={combo.name}
+                        src={product.image}
+                        alt={product.name}
                         className="product-image"
                       />
                     ) : (
                       "-"
                     )}
                   </td>
-                  <td>{combo.name}</td>
-                  <td>{combo.sku}</td>
-                  <td>₹{combo.price}</td>
-                  <td>₹{combo.regularPrice}</td>
-                  <td>{combo.totalProduct}</td>
-                  <td>{combo.status}</td>
-                  <td>{combo.enable ? "Yes" : "No"}</td>
-                  <td>
-                    <button className="action-btn edit">✏️</button>
-                    <button className="action-btn delete">🗑️</button>
-                  </td>
+                  <td>{product.name}</td>
+                  <td>{product.sku}</td>
+                  <td>{product.brand}</td>
+                  <td>{product.model}</td>
+                  <td>₹{product.purchasePrice}</td>
+                  <td>₹{product.sellingPrice}</td>
+                  <td>₹{product.minPrice}</td>
+                  <td>{product.stock}</td>
+                  <td>{product.supplier}</td>
+                  <td>{product.productType}</td>
+                  <td>{product.category}</td>
+                  <td>{product.stockAlert}</td>
                 </tr>
               ))
             )}
@@ -197,4 +212,4 @@ function ComboProductList() {
   );
 }
 
-export default ComboProductList;
+export default ProductList;

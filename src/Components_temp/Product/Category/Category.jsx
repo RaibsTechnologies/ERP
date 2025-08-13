@@ -15,7 +15,7 @@ function CategoryPage() {
   return (
     <div className="category-container">
       {/* Header */}
-      <div className="category-header">
+      <div className="heading">
         <h1>Category</h1>
       </div>
 

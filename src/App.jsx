@@ -11,6 +11,10 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
+
+import DraftProduct from "./Components_temp/Product/DraftProduct/DraftProduct";
+import ComboDraftProductList from "./Components_temp/Product/DraftProduct/ComboDraftProduct";
+
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
 import SalesList from "./Components_temp/Sales/NewSale/SaleList"; 
@@ -23,6 +27,8 @@ import Quotations from "./Components_temp/Sales/Quotations/Quotations";
 import SaleReturn from "./Components_temp/Sales/SaleReturn/SaleReturn";
 import CanceledInvoice from "./Components_temp/Sales/CanceledInvoice/CanceledInvoice";
 import DeleteReqSale from "./Components_temp/Sales/DeleteReqSale/DeleteReqSale";
+import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
+
 
 
 const App = () => {
@@ -71,6 +77,33 @@ const App = () => {
             </Layout>
           }
         />
+        {/* DraftProduct */}
+        <Route
+          path="/draftproduct"
+          element={
+            <Layout>
+              < DraftProduct/>
+            </Layout>
+          }
+        />
+        <Route
+          path="/draftcomboproducts"
+          element={
+            <Layout>
+              < ComboDraftProductList/>
+            </Layout>
+          }
+        />
+
+        {/* Add Opening Stock */}
+        <Route
+          path="/addopeningstock"
+          element={
+            <Layout>
+              <AddOpeningStock />
+            </Layout>
+          }
+        />
 
         {/* Stock List */}
         <Route
@@ -111,6 +144,7 @@ const App = () => {
           }
         />
 
+
         <Route
   path="/unittype"      // or "/unit-type"
   element={
@@ -146,6 +180,7 @@ const App = () => {
       <Route path="/canceledinvoice" element={<Layout><CanceledInvoice/></Layout>} />
        <Route path="/deleterequestedsale" element={<Layout><DeleteReqSale/></Layout>} />
  
+
 
         {/* 404 Fallback */}
         <Route

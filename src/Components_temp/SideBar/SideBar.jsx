@@ -23,7 +23,7 @@ function SideBar() {
       submenu: [
         { name: "Add Product", link: "/addproduct" },
         {name: "Product List",link: "/productlist" },
-        { name: "Draft Product List", link: "/Draft Product List" },
+        { name: "Draft Product List", link: "/draftproduct" },
         { name: "Category", link: "/Category" },
         { name: "Brand", link: "/Brandlist" },
         { name: "Model", link: "/ModelList" },
