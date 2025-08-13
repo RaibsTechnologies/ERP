@@ -49,8 +49,8 @@ function SideBar() {
     {
       name: "Sales",
       submenu: [
-        { name: "New Sales", link: "/newsales" },
-        { name: "Invoice", link: "/invoice" },
+        { name: "New Sales", link: "/SalesList" },
+        { name: "Invoice", link: "/invoicelist" },
         { name: "Conditional Sales", link: "/conditionalsales" },
         { name: "Recurring Invoice", link: "/recurringinvoice" },
         { name: "POS", link: "/pos" },

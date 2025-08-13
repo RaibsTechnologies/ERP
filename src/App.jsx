@@ -13,6 +13,16 @@ import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
+import SalesList from "./Components_temp/Sales/NewSale/SaleList"; 
+import InvoiceList from "./Components_temp/Sales/Invoice/InvoiceList";
+import ConditionalSaleList from "./Components_temp/Sales/ConditionalSale/ConditionalSaleList";
+import RecurringInvoice from "./Components_temp/Sales/RecurringInvoice/RecurringInvoice";
+import POSSale from "./Components_temp/Sales/POS Sale/POSSale";
+import Allinvoice from "./Components_temp/Sales/All Invoice/AllInvoice";
+import Quotations from "./Components_temp/Sales/Quotations/Quotations";
+import SaleReturn from "./Components_temp/Sales/SaleReturn/SaleReturn";
+import CanceledInvoice from "./Components_temp/Sales/CanceledInvoice/CanceledInvoice";
+import DeleteReqSale from "./Components_temp/Sales/DeleteReqSale/DeleteReqSale";
 
 
 const App = () => {
@@ -125,6 +135,16 @@ const App = () => {
     </Layout>
   }
   />
+  <Route path="/SalesList" element={<Layout><SalesList /></Layout>} />
+  <Route path="/invoicelist" element={<Layout><InvoiceList /></Layout>} />
+   <Route path="/conditionalsales" element={<Layout><ConditionalSaleList /></Layout>} />
+   <Route path="/recurringinvoice" element={<Layout><RecurringInvoice /></Layout>} />
+    <Route path="/possale" element={<Layout><POSSale/></Layout>} />
+    <Route path="/allinvoice" element={<Layout><Allinvoice/></Layout>} />
+     <Route path="/quotations" element={<Layout><Quotations/></Layout>} />
+     <Route path="/salereturn" element={<Layout><SaleReturn/></Layout>} />
+      <Route path="/canceledinvoice" element={<Layout><CanceledInvoice/></Layout>} />
+       <Route path="/deleterequestedsale" element={<Layout><DeleteReqSale/></Layout>} />
  
 
         {/* 404 Fallback */}

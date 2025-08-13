@@ -1,0 +1,126 @@
+.salereturn-container {
+  background: #fff;
+  padding: 24px 32px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* Page title */
+.main-title {
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: #19B865;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+}
+.page-size {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.add-btn {
+  background: #3CCE7B;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.add-btn:hover { background: #27a968; }
+.searchbar {
+  flex: 1;
+  min-width: 180px;
+  max-width: 340px;
+  display: flex;
+  justify-content: center;
+}
+.searchbar input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 95px;
+  margin-left: 10px;
+}
+.topbar-icon {
+  padding: 6px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  transition: background 0.18s;
+}
+.topbar-icon:hover {
+  background: #e9ecef;
+  color: #155724;
+}
+.topbar-icon svg { display: block; }
+
+/* Table section */
+.table-scroll-area {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 6px;
+}
+.salereturn-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+.salereturn-table th, .salereturn-table td {
+  padding: 12px 10px;
+  border: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+.salereturn-table th {
+  background: #f7fcf8;
+  font-weight: 600;
+  color: #18a157;
+  white-space: nowrap;
+}
+.salereturn-table tbody tr:hover {
+  background: #f8f9fa;
+}
+.empty {
+  text-align: center;
+  color: #bbb;
+  height: 40px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .salereturn-container { padding: 10px; }
+  .main-title { font-size: 1.03rem; }
+  .top-bar { gap: 7px; }
+  .topbar-left, .topbar-right { gap: 4px; }
+  .searchbar { max-width: 150px; }
+}
