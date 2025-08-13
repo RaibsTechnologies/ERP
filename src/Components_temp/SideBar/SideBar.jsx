@@ -36,14 +36,14 @@ function SideBar() {
       name: "Inventory",
       submenu: [
         { name: "Add Opening Stock", link: "/addopeningstock" },
-        { name: "Stock Management", link: "/stockmanagement" },
+        { name: "Receive Purchase Orders", link: "/Receive Purchase Orders" },
         { name: "Product Costing Sales", link: "/productcostingsales" },
         { name: "Stock Transfer", link: "/stocktransfer" },
         { name: "Receive Transfer Product", link: "/receivetransferproduct" },
         { name: "Stock List", link: "/stocklist" },
         { name: "Product Movement", link: "/productmovement" },
         { name: "Stock Adjustments", link: "/stockadjustments" },
-        { name: "Product Information", link: "/productinformation" }
+        { name: "Product Info", link: "/productinfo" }
       ]
     },
     {
