@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./productList.css";
+import "./ProductList.css";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -83,7 +83,7 @@ function ProductList() {
 
   return (
     <div className="product-container">
-      <h2 className="title">Product</h2>
+      <h3 className="heading">Product</h3>
 
       {/* Tabs */}
       <div className="tabs">
@@ -109,7 +109,7 @@ function ProductList() {
           <option>50</option>
         </select>
 
-        <button className="add-btn">+ Add New Product</button>
+        <button className="btn">+ Add New Product</button>
 
         <div className="searchbar">
           <input

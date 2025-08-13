@@ -11,10 +11,15 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
+<<<<<<< HEAD
+import DraftProduct from "./Components_temp/Product/DraftProduct/DraftProduct";
+import ComboDraftProductList from "./Components_temp/Product/DraftProduct/ComboDraftProduct";
+=======
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
 import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
 
+>>>>>>> main
 
 const App = () => {
   return (
@@ -59,6 +64,23 @@ const App = () => {
           element={
             <Layout>
               <ComboProductList />
+            </Layout>
+          }
+        />
+        {/* DraftProduct */}
+        <Route
+          path="/draftproduct"
+          element={
+            <Layout>
+              < DraftProduct/>
+            </Layout>
+          }
+        />
+        <Route
+          path="/draftcomboproducts"
+          element={
+            <Layout>
+              < ComboDraftProductList/>
             </Layout>
           }
         />
@@ -112,6 +134,16 @@ const App = () => {
           }
         />
 
+<<<<<<< HEAD
+          <Route
+          path="/unittype"      // or "/unit-type"
+          element={
+            <Layout>
+              <UnitTypeList />
+            </Layout>
+          }
+        />
+=======
         <Route
   path="/unittype"      // or "/unit-type"
   element={
@@ -137,6 +169,7 @@ const App = () => {
   }
   />
  
+>>>>>>> main
 
         {/* 404 Fallback */}
         <Route
