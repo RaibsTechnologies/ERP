@@ -1,0 +1,160 @@
+.printlable-all-container {
+  background: #fff;
+  padding: 25px 30px;
+  font-family: "Segoe UI", sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #3CCE7B;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.tbl-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-select,
+.num-label-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: #26a865;
+  font-weight: 600;
+  margin: 24px 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.info-labels {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #fafafa;
+  padding: 16px 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.info-row input[type="checkbox"] {
+  margin-right: 6px;
+  accent-color: #3CCE7B;
+}
+
+.info-row label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-row input[type="number"],
+.info-row select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 13px;
+  width: 70px;
+}
+
+.info-row select {
+  min-width: 120px;
+  background: #fff;
+}
+
+.barcode-setting-select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.barcode-size-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 20px;
+}
+
+.barcode-size-row label {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.barcode-size-row input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.generate-label-row {
+  margin-top: 30px;
+}
+
+.generate-btn {
+  background: #3CCE7B;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(60, 206, 123, 0.3);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.generate-btn:hover {
+  background: #2eb86a;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tbl-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .barcode-size-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
