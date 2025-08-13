@@ -11,6 +11,7 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
+import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
 
 const App = () => {
   return (
@@ -106,6 +107,15 @@ const App = () => {
     </Layout>
   }
 />
+        {/* Add Opening Stock */}
+        <Route
+          path="/addopeningstock"
+          element={
+            <Layout>
+              <AddOpeningStock />
+            </Layout>
+          }
+        />
 
         {/* 404 Fallback */}
         <Route

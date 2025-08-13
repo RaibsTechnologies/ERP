@@ -1,0 +1,142 @@
+.opening-stock-container {
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+}
+
+/* Headings */
+.section-title {
+  color: #00a651;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0 15px 0;
+}
+
+/* Form Row Layout */
+.form-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: red;
+}
+
+/* Inputs and Selects */
+input,
+select {
+  height: 38px;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+input[type="date"] {
+  padding-right: 5px;
+}
+
+/* Save Button */
+.save-btn {
+  background-color: #00a651;
+  color: white;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+}
+
+.save-btn:hover {
+  background-color: #009046;
+}
+
+/* Table Controls Section */
+.table-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.table-controls select {
+  height: 32px;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 3px 4px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+.table-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 10px;
+}
+
+.table-icons svg {
+  font-size: 15px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: auto;
+}
+
+thead th {
+  font-weight: 500;
+  color: #555;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
