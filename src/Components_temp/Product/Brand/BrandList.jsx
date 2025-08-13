@@ -74,7 +74,7 @@ function BrandList() {
 
   return (
     <div className="brand-container">
-      <h2 className="title">Brand</h2>
+      <h2 className="heading">Brand</h2>
 
       {/* Top Controls */}
       <div className="top-bar">
