@@ -1,0 +1,130 @@
+.variant-container {
+  background: #fff;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+.title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #3CCE7B;
+  margin-bottom: 15px;
+}
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.page-size {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.add-btn {
+  background: #3CCE7B;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.searchbar {
+  flex: 1;
+  max-width: 320px;
+}
+.searchbar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.action-icons {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+.icon-btn {
+  padding: 8px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: background-color 0.2s ease;
+}
+.icon-btn:hover {
+  background: #e9ecef;
+  color: #333;
+}
+.icon-btn svg { width: 20px; height: 20px; }
+.variant-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.variant-table th, .variant-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  vertical-align: middle;
+}
+.variant-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #dee2e6;
+}
+.variant-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+.empty {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  font-style: italic;
+}
+.status {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #eee;
+  color: #333;
+}
+.action-select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  background: white;
+  cursor: pointer;
+  color: #666;
+  font-weight: 500;
+}
+.action-select:focus {
+  outline: none;
+  border-color: #3CCE7B;
+}
+@media (max-width: 768px) {
+  .top-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .searchbar {
+    order: 3;
+    flex: 1 1 100%;
+    margin: 10px 0;
+    max-width: none;
+  }
+  .variant-table {
+    font-size: 12px;
+  }
+  .variant-table th, .variant-table td {
+    padding: 8px 10px;
+  }
+}
