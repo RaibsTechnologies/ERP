@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./PrintLableList.css"; // Assuming you have a CSS file for styles 
+import "./PrintLableList.css";
 
 function PrintLabel() {
   const [selectedProduct, setSelectedProduct] = useState("");
@@ -18,6 +18,13 @@ function PrintLabel() {
   });
   const [exTax, setExTax] = useState("Ex. Tax");
 
+  // Barcode settings
+  const [barcodeSetting, setBarcodeSetting] = useState(
+    "20 Labels per Sheet, Sheet Size: 8.5\" x 11\", Label Size: 4\" x 1\", Labels per sheet: 20"
+  );
+  const [barcodeWidth, setBarcodeWidth] = useState(1);
+  const [barcodeHeight, setBarcodeHeight] = useState(0.2);
+
   const products = ["Product A", "Product B", "Product C"];
 
   const handleOptionChange = (e) => {
@@ -30,9 +37,17 @@ function PrintLabel() {
     setFontSizes((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleGenerateLabel = () => {
+    alert(`Generating label with:
+    Product: ${selectedProduct}
+    No. of Labels: ${numLabels}
+    Barcode: ${barcodeSetting}, Width: ${barcodeWidth}", Height: ${barcodeHeight}"`);
+  };
+
   return (
     <div className="print-label-container">
       {/* Table Header */}
+      <h3 className="heading">Print Label</h3>
       <div className="label-table-header">
         <div className="header-cell">Product Name</div>
         <div className="header-cell">No. Of Label</div>
@@ -162,6 +177,60 @@ function PrintLabel() {
           </div>
         </div>
       </div>
+
+      {/* Barcode Settings */}
+      <h3 className="info-title">Barcode Settings</h3>
+      <select
+        value={barcodeSetting}
+        onChange={(e) => setBarcodeSetting(e.target.value)}
+        style={{ width: "100%", padding: "6px", marginBottom: "16px" }}
+      >
+        <option>
+          20 Labels per Sheet, Sheet Size: 8.5" x 11", Label Size: 4" x 1", Labels per sheet: 20
+        </option>
+        <option>
+          30 Labels per Sheet, Sheet Size: 8.5" x 11", Label Size: 2.625" x 1", Labels per sheet: 30
+        </option>
+      </select>
+
+      <h3 className="info-title">
+        Barcode Size <span role="img" aria-label="barcode">📊</span>
+      </h3>
+      <div style={{ display: "flex", gap: "20px", marginBottom: "20px" }}>
+        <div style={{ flex: 1 }}>
+          <label>Max Width : Inches *</label>
+          <input
+            type="number"
+            value={barcodeWidth}
+            onChange={(e) => setBarcodeWidth(e.target.value)}
+            style={{ width: "100%", padding: "6px" }}
+          />
+        </div>
+        <div style={{ flex: 1 }}>
+          <label>Height : Inches *</label>
+          <input
+            type="number"
+            value={barcodeHeight}
+            onChange={(e) => setBarcodeHeight(e.target.value)}
+            style={{ width: "100%", padding: "6px" }}
+          />
+        </div>
+      </div>
+
+      <button
+        onClick={handleGenerateLabel}
+        style={{
+          backgroundColor: "#15d38b",
+          color: "#fff",
+          padding: "10px 20px",
+          border: "none",
+          borderRadius: "6px",
+          cursor: "pointer",
+          fontSize: "1rem"
+        }}
+      >
+        ✓ Generate Label
+      </button>
     </div>
   );
 }
