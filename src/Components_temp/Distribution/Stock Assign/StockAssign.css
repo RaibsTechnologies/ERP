@@ -1,0 +1,98 @@
+.stockadjust-container {
+  background: #fff;
+  padding: 34px 38px 0 38px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+
+.main-title {
+  font-size: 1.34rem;
+  font-weight: 700;
+  color: #16bc67;
+  letter-spacing: 0.02em;
+  margin-bottom: 31px;
+}
+
+.stockadjust-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.form-group {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.required {
+  color: red;
+  font-size: 14px;
+  margin-left: 1px;
+}
+
+/* Date input with calendar icon */
+.input-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.date-input {
+  padding: 8px 10px;
+  border: 1.2px solid #d4d4d4;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 130px;
+  background: #fff;
+}
+
+.calendar-icon {
+  display: flex;
+  align-items: center;
+  padding-left: 2px;
+}
+
+.date-format {
+  color: #949494;
+  font-size: 12px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+/* Warehouse & Delivery Man select styling */
+.custom-select select {
+  width: 170px;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1.2px solid #d4d4d4;
+  border-radius: 5px;
+  background: #fff;
+  transition: border 0.14s;
+  outline: none;
+}
+
+.custom-select select:focus {
+  border-color: #17c065;
+}
+
+/* Responsive for small screens */
+@media (max-width: 800px) {
+  .stockadjust-container { padding: 18px 7vw 0 7vw; }
+  .main-title { font-size: 1rem; }
+  .form-row { flex-direction: column; gap: 22px; }
+  .form-group { min-width: 160px; }
+  .date-input, .custom-select select { font-size: 14px; width: 97vw; max-width: 250px; }
+}

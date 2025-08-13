@@ -1,0 +1,147 @@
+.routelist-container {
+  background: #fff;
+  padding: 24px 30px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* Page Title */
+.main-title {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #14b56b; /* ERP green shade */
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+}
+
+/* Top bar row */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+/* Page size dropdown */
+.page-size {
+  padding: 7px 12px;
+  font-size: 14px;
+  border: 1px solid #cfd4d6;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+}
+
+/* + Add New Route button */
+.add-btn {
+  background: #3CCE7B;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 1px 8px rgba(60, 206, 123, 0.15);
+  transition: background 0.15s ease;
+}
+.add-btn:hover {
+  background: #27a968;
+}
+
+/* Search box */
+.searchbar {
+  flex: 1;
+  min-width: 190px;
+  max-width: 320px;
+}
+.searchbar input {
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  font-size: 14px;
+  background: #fff;
+}
+
+/* Icons container on the right */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d4d4d4;
+  background: #f8f9fa;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #14b56b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+.topbar-icon:hover {
+  background: #e9ecef;
+  color: #0e7e42;
+}
+.topbar-icon svg {
+  display: block;
+}
+
+/* Table container */
+.table-scroll-area {
+  overflow-x: auto;
+  background: #fff;
+}
+
+/* Table */
+.routelist-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.routelist-table th,
+.routelist-table td {
+  padding: 12px 10px;
+  border: 1px solid #ececec;
+  font-size: 14px;
+  text-align: left;
+}
+
+.routelist-table th {
+  background: #f6fbf8;
+  font-weight: 600;
+  color: #14b56b;
+  white-space: nowrap;
+}
+
+.routelist-table tbody tr:hover {
+  background: #f9f9f9;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: #aaa;
+  height: 44px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .routelist-container {
+    padding: 14px;
+  }
+  .main-title {
+    font-size: 1.1rem;
+  }
+  .searchbar {
+    max-width: 100%;
+  }
+}
