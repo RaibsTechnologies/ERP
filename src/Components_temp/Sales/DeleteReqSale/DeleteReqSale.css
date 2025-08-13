@@ -1,0 +1,112 @@
+.deletereqsale-container {
+  background: #fff;
+  padding: 24px 32px;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  color: #222;
+}
+
+/* Title */
+.main-title {
+  font-size: 1.37rem;
+  font-weight: 700;
+  color: #20bc67;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.page-size {
+  padding: 6px 9px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.searchbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+  max-width: 330px;
+}
+.searchbar input {
+  width: 100%;
+  padding: 8px 13px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 90px;
+  margin-left: 10px;
+}
+.topbar-icon {
+  padding: 6px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  transition: background 0.17s;
+}
+.topbar-icon:hover {
+  background: #e9ecef;
+  color: #155724;
+}
+.topbar-icon svg { display: block; }
+
+/* Table */
+.table-scroll-area {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 6px;
+}
+.deletereqsale-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+.deletereqsale-table th, .deletereqsale-table td {
+  padding: 12px 10px;
+  border: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+.deletereqsale-table th {
+  background: #f7fcf8;
+  font-weight: 600;
+  color: #1aa35a;
+  white-space: nowrap;
+}
+.deletereqsale-table tbody tr:hover {
+  background: #f8f9fa;
+}
+.empty {
+  text-align: center;
+  color: #bbb;
+  height: 40px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .deletereqsale-container { padding: 10px; }
+  .main-title { font-size: 1.04rem; }
+  .top-bar { gap: 7px; }
+  .searchbar { max-width: 150px; }
+}
