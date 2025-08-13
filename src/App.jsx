@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import Login from "./Components/LoginPage/Login";
-import AddProduct from "./Components/Product/AddProduct/AddProduct";
-import ProductList from "./Components/Product/ProductList/ProductList";
-import ComboProductList from "./Components/Product/ProductList/ComboProductList";
-import StockList from "./Components/Inventory/StockList/StockList";
-import BrandList from "./Components/Product/Brand/BrandList";
-import ModelList from "./Components/Product/Model/ModelList";
-import UnitTypeList from "./Components/Product/UnitType/UnitTypeList";
-import DashBoard from "./Components/DashBoard/DashBoard";
-import Category from "./Components/Product/Category/Category";
+import Login from "./Components_temp/LoginPage/Login";
+import AddProduct from "./Components_temp/Product/AddProduct/AddProduct";
+import ProductList from "./Components_temp/Product/ProductList/ProductList";
+import ComboProductList from "./Components_temp/Product/ProductList/ComboProductList";
+import StockList from "./Components_temp/Inventory/StockList/StockList";
+import BrandList from "./Components_temp/Product/Brand/BrandList";
+import ModelList from "./Components_temp/Product/Model/ModelList";
+import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
+import DashBoard from "./Components_temp/DashBoard/DashBoard";
+import Category from "./Components_temp/Product/Category/Category";
 
 const App = () => {
   return (
