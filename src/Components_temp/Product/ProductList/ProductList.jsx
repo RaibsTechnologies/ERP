@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./productList.css";
+import "./ProductList.css";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -109,7 +109,7 @@ function ProductList() {
           <option>50</option>
         </select>
 
-        <button className="add-btn">+ Add New Product</button>
+        <button className="btn">+ Add New Product</button>
 
         <div className="searchbar">
           <input
