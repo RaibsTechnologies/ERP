@@ -83,7 +83,7 @@ function ProductList() {
 
   return (
     <div className="product-container">
-      <h2 className="title">Product</h2>
+      <h2 className="heading">Product</h2>
 
       {/* Tabs */}
       <div className="tabs">
