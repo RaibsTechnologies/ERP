@@ -11,13 +11,10 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
-<<<<<<< HEAD
-import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
-=======
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
+import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
 
->>>>>>> main
 
 const App = () => {
   return (
@@ -62,6 +59,16 @@ const App = () => {
           element={
             <Layout>
               <ComboProductList />
+            </Layout>
+          }
+        />
+
+        {/* Add Opening Stock */}
+        <Route
+          path="/addopeningstock"
+          element={
+            <Layout>
+              <AddOpeningStock />
             </Layout>
           }
         />
@@ -121,17 +128,6 @@ const App = () => {
     </Layout>
   }
 />
-<<<<<<< HEAD
-        {/* Add Opening Stock */}
-        <Route
-          path="/addopeningstock"
-          element={
-            <Layout>
-              <AddOpeningStock />
-            </Layout>
-          }
-        />
-=======
 <Route
   path="/printLabel"
   element={
@@ -141,7 +137,6 @@ const App = () => {
   }
   />
  
->>>>>>> main
 
         {/* 404 Fallback */}
         <Route
