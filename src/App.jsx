@@ -11,8 +11,15 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
+<<<<<<< HEAD
 import DraftProduct from "./Components_temp/Product/DraftProduct/DraftProduct";
 import ComboDraftProductList from "./Components_temp/Product/DraftProduct/ComboDraftProduct";
+=======
+import VariantList from "./Components_temp/Product/Variant/VariantList";
+import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
+import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
+
+>>>>>>> main
 
 const App = () => {
   return (
@@ -78,6 +85,16 @@ const App = () => {
           }
         />
 
+        {/* Add Opening Stock */}
+        <Route
+          path="/addopeningstock"
+          element={
+            <Layout>
+              <AddOpeningStock />
+            </Layout>
+          }
+        />
+
         {/* Stock List */}
         <Route
           path="/stocklist"
@@ -117,6 +134,7 @@ const App = () => {
           }
         />
 
+<<<<<<< HEAD
           <Route
           path="/unittype"      // or "/unit-type"
           element={
@@ -125,6 +143,33 @@ const App = () => {
             </Layout>
           }
         />
+=======
+        <Route
+  path="/unittype"      // or "/unit-type"
+  element={
+    <Layout>
+      <UnitTypeList />
+    </Layout>
+  }
+/>    
+<Route
+  path="/variantList"      // or "/variant-list"
+  element={
+    <Layout>
+      <VariantList />
+    </Layout>
+  }
+/>
+<Route
+  path="/printLabel"
+  element={
+    <Layout>
+      <PrintLabelList />
+    </Layout>
+  }
+  />
+ 
+>>>>>>> main
 
         {/* 404 Fallback */}
         <Route
