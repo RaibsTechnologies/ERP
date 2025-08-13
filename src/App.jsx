@@ -28,7 +28,13 @@ import SaleReturn from "./Components_temp/Sales/SaleReturn/SaleReturn";
 import CanceledInvoice from "./Components_temp/Sales/CanceledInvoice/CanceledInvoice";
 import DeleteReqSale from "./Components_temp/Sales/DeleteReqSale/DeleteReqSale";
 import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
-
+import ReceivePurchaseOrders from "./Components_temp/Inventory/ReceivePurchaseOrders/ReceivePurchaseOrders";
+import ProductCostingSales from "./Components_temp/Inventory/ProductCostingSales/ProductCostingSales";
+import StockTransfer from "./Components_temp/Inventory/StockTransfer/StockTransfer";
+import ReceiveTransferProduct from "./Components_temp/Inventory/ReceiveTransferProduct/ReceiveTransferProduct";
+import ProductMovement from "./Components_temp/Inventory/ProductMovement/ProductMovement";
+import StockAdjustments from "./Components_temp/Inventory/StockAdjustments/StockAdjustments";
+import ProductInfo from "./Components_temp/Inventory/ProductInfo/ProductInfo";
 
 
 const App = () => {
@@ -114,6 +120,79 @@ const App = () => {
             </Layout>
           }
         />
+
+        {/* Receive Purchase Orders */}
+        <Route
+          path="/Receive Purchase Orders"
+          element={
+            <Layout>
+              <ReceivePurchaseOrders /> 
+            </Layout>
+          }
+        />
+
+        {/* Product Costing Sales */}
+        <Route
+          path="/productcostingsales"
+          element={
+            <Layout>
+              <ProductCostingSales />
+            </Layout>
+          }
+        />
+
+        {/* Stock Transfer*/}
+        <Route 
+          path="/stocktransfer"
+          element={
+            <Layout>
+              <StockTransfer />
+            </Layout>
+          }
+        />
+
+        {/* Receive Transfer Product */}
+        <Route
+          path="/receivetransferproduct"
+          element={
+            <Layout>
+              <ReceiveTransferProduct />
+            </Layout>
+          }
+        />
+
+        {/* Product Movement */}
+        <Route
+          path="/productmovement"
+          element={
+            <Layout>
+              <ProductMovement />
+            </Layout>
+          }
+        />
+
+        {/* Stock Adjustments */}
+        <Route
+          path="/stockadjustments"
+          element={
+            <Layout>
+              <StockAdjustments />
+            </Layout>
+          }
+        />
+
+        {/* Product Info*/}
+        <Route
+          path="/productinfo"
+          element={
+            <Layout>
+              <ProductInfo />
+            </Layout>
+          }
+        />
+
+
+
         {/* Add Category */}
         <Route
           path="/Category"
