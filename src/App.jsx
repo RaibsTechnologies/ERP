@@ -41,6 +41,12 @@ import ReceiveTransferProduct from "./Components_temp/Inventory/ReceiveTransferP
 import ProductMovement from "./Components_temp/Inventory/ProductMovement/ProductMovement";
 import StockAdjustments from "./Components_temp/Inventory/StockAdjustments/StockAdjustments";
 import ProductInfo from "./Components_temp/Inventory/ProductInfo/ProductInfo";
+import AddContacts from "./Components_temp/Contacts/Add Contacts/AddContacts";
+import ContactType from "./Components_temp/Contacts/ContactType/ContactType";
+import ContactCategory from "./Components_temp/Contacts/Contact Category/ContactCategory";
+import SupplierList from "./Components_temp/Contacts/Supplier/SupplierList";
+import Customer from "./Components_temp/Contacts/Customer/Customer";
+import RetailerList from "./Components_temp/Contacts/RetailerList/RetailerList";
 
 
 const App = () => {
@@ -272,6 +278,12 @@ const App = () => {
   <Route path="/userassign" element={<Layout><UserAssign /></Layout>} />
   <Route path="/stockadjust" element={<Layout><StockAdjust /></Layout>} />
   <Route path="/route" element={<Layout><RouteList /></Layout>} />
+  <Route path="/addcontacts" element={<Layout><AddContacts /></Layout>} />
+  <Route path="/contacttype" element={<Layout><ContactType /></Layout>} />
+  <Route path="/contactcategory" element={<Layout><ContactCategory /></Layout>} />
+  <Route path="/supplier" element={<Layout><SupplierList /></Layout>} />
+  <Route path="/customer" element={<Layout><Customer /></Layout>} />
+  <Route path="/retailerlist" element={<Layout><RetailerList /></Layout>} />
  
 
 
