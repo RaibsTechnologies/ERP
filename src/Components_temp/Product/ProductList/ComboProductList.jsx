@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./productList.css";
+// import "./productList.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function ComboProductList() {
   const [comboProducts, setComboProducts] = useState([]);
@@ -73,7 +74,7 @@ function ComboProductList() {
 
   return (
     <div className="product-container">
-      <h2 className="title">Product</h2>
+      <h2 className="product-container_heading">Product</h2>
 
       {/* Tabs */}
       <div className="tabs">

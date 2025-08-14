@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaSearch, FaPrint, FaUpload, FaColumns } from "react-icons/fa";
 import "./Category.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function CategoryPage() {
   const [categories, setCategories] = useState([]);
@@ -13,10 +14,10 @@ function CategoryPage() {
   }, []);
 
   return (
-    <div className="category-container">
+    <div className="product-container">
       {/* Header */}
       <div>
-        <h3 className="heading">Category</h3>
+        <h3 className="product-container_heading">Category</h3>
       </div>
 
       {/* Controls Row */}
@@ -28,7 +29,7 @@ function CategoryPage() {
             <option value="25">25</option>
             <option value="50">50</option>
           </select>
-          <button className="add-btn">+ Add Category</button>
+          <button className="product-Btn">+ Add Category</button>
         </div>
 
         {/* Search */}

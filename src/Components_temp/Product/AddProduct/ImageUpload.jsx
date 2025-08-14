@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import "./AddProduct.css";
+// import "./AddProduct.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 const ImageUpload = ({ file, onFileChange }) => {
   const inputRef = useRef();
@@ -11,7 +12,7 @@ const ImageUpload = ({ file, onFileChange }) => {
   };
 
   return (
-    <div className="photoUploadBox">
+    <div className="addproduct-photoUploadBox">
       <label>Product Photo</label>
       <div
         className="uploadArea"

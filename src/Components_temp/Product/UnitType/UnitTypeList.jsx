@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./UnitTypeList.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function UnitTypeList() {
   const [unitTypes, setUnitTypes] = useState([]);
@@ -46,8 +47,8 @@ function UnitTypeList() {
   );
 
   return (
-    <div className="unit-container">
-      <h3 className="heading">Unit Type</h3>
+    <div className="product-container">
+      <h3 className="product-container_heading">Unit Type</h3>
 
       <div className="top-bar">
         <select

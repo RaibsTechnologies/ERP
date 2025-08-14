@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./ProductList.css";
+// import "./ProductList.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -83,7 +84,7 @@ function ProductList() {
 
   return (
     <div className="product-container">
-      <h3 className="heading">Product</h3>
+      <h3 className="product-container_heading">Product</h3>
 
       {/* Tabs */}
       <div className="tabs">
@@ -102,7 +103,7 @@ function ProductList() {
       </div>
 
       {/* Top Controls */}
-      <div className="top-bar">
+      <div className="controls-row">
         <select className="page-size">
           <option>10</option>
           <option>25</option>
