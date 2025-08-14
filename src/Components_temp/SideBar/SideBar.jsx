@@ -65,12 +65,11 @@ function SideBar() {
     {
       name: "Purchase",
       submenu: [
-        { name: "New Order", link: "/neworder" },
-        { name: "Purchase Orders", link: "/purchaseorders" },
-        { name: "Delete Requested Purchase", link: "/deleterequestedpurchase" },
-        { name: "Suggested List", link: "/suggestedlist" },
-        { name: "Purchase Return List", link: "/purchasereturnlist" },
-        { name: "Fleet", link: "/fleet" }
+        { name: "New Order", link: "/NewOrder" },
+        { name: "Purchase Orders", link: "/PurchaseOrder" },
+        { name: "Delete Requested Purchase", link: "/DeleteRequestedPurchase" },
+        { name: "Purchase Return  List", link: "/PurchaseReturnOrderList" },
+        { name: "Fleet", link: "/Fleet" }
       ]
     },
     {

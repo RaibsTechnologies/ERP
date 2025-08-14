@@ -14,6 +14,13 @@ import Category from "./Components_temp/Product/Category/Category";
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
 import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
+import NewOrder from "./Components_temp/Purchase/NewOrder/NewOrder";
+import PurchaseOrder from "./Components_temp/Purchase/PurchaseOrder/PurchaseOrder";
+import DeleteRequestedPurchase from "./Components_temp/Purchase/DeleteRequestedPurchase/DeleteRequestedPurchase";
+import PurchaseReturnOrderList from "./Components_temp/Purchase/PurchaseReturnOrderList/PurchaseReturnOrderList";
+import Fleet from "./Components_temp/Purchase/Fleet/Fleet";
+
+
 
 
 const App = () => {
@@ -137,6 +144,49 @@ const App = () => {
   }
   />
  
+ <Route
+  path="/NewOrder"
+  element={
+    <Layout>
+      <NewOrder />
+    </Layout>
+  }
+  />
+  <Route
+  path="/PurchaseOrder"
+  element={
+    <Layout>
+      <PurchaseOrder />
+    </Layout>
+  }
+  />
+  <Route
+  path="/DeleteRequestedPurchase"
+  element={
+    <Layout>
+      <DeleteRequestedPurchase />
+    </Layout>
+  }
+  />
+ 
+  <Route
+  path="/PurchaseReturnOrderList"
+  element={
+    <Layout>
+      <PurchaseReturnOrderList />
+    </Layout>
+  }
+  />
+  <Route
+  path="/Fleet"
+  element={
+    <Layout>
+      <Fleet />
+    </Layout>
+  }
+  />
+
+
 
         {/* 404 Fallback */}
         <Route
