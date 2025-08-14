@@ -89,8 +89,8 @@ export default function AddOpeningStock() {
           />
         </div>
       </div>
-      <div className="save-btn">
-        <button className="btn" onClick={handleSave}>
+      <div className="save-button">
+        <button className="add-btn" onClick={handleSave}>
           ✓ Save
         </button>
       </div>
@@ -106,7 +106,7 @@ export default function AddOpeningStock() {
         </select>
 
         <div className="search-box">
-          <FaSearch />
+          <FaSearch   className="search-icon" />
           <input type="text" placeholder="SEARCH" />
         </div>
 

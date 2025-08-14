@@ -47,29 +47,35 @@ export default function ReceivePurchaseOrders() {
   return (
     <div className="purchase-orders-container">
       {/* Title */}
-      <h2 className="page-title">Receive Purchase Orders</h2>
+      <h2 className="heading">Receive Purchase Orders</h2>
 
       {/* Controls Row */}
-      <div className="controls-row">
+      <div className="table-controls">
         <select className="rows-select">
           <option>10</option>
           <option>25</option>
           <option>50</option>
         </select>
 
-        <button className="new-order-btn" onClick={handleNewOrder}>
+        <button className="add-btn" onClick={handleNewOrder}>
           <FaPlus style={{ marginRight: "6px" }} /> New Order
         </button>
 
         <div className="search-box">
-          <FaSearch />
+          <FaSearch   className="search-icon"  />
           <input type="text" placeholder="SEARCH" />
         </div>
 
-        <div className="table-icons">
-          <FaPrint title="Print" />
-          <FaUpload title="Export" />
-          <FaColumns title="Columns" />
+        <div className="icon-buttons">
+            <button className="icon-btn">
+              <FaPrint />
+            </button>
+            <button className="icon-btn">
+              <FaUpload />
+            </button>
+            <button className="icon-btn">
+              <FaColumns />
+            </button>
         </div>
       </div>
 
