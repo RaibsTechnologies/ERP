@@ -23,7 +23,7 @@ function SideBar() {
       submenu: [
         { name: "Add Product", link: "/addproduct" },
         {name: "Product List",link: "/productlist" },
-        { name: "Draft Product List", link: "/Draft Product List" },
+        { name: "Draft Product List", link: "/draftproduct" },
         { name: "Category", link: "/Category" },
         { name: "Brand", link: "/Brandlist" },
         { name: "Model", link: "/ModelList" },
@@ -36,21 +36,21 @@ function SideBar() {
       name: "Inventory",
       submenu: [
         { name: "Add Opening Stock", link: "/addopeningstock" },
-        { name: "Stock Management", link: "/stockmanagement" },
+        { name: "Receive Purchase Orders", link: "/Receive Purchase Orders" },
         { name: "Product Costing Sales", link: "/productcostingsales" },
         { name: "Stock Transfer", link: "/stocktransfer" },
         { name: "Receive Transfer Product", link: "/receivetransferproduct" },
         { name: "Stock List", link: "/stocklist" },
         { name: "Product Movement", link: "/productmovement" },
         { name: "Stock Adjustments", link: "/stockadjustments" },
-        { name: "Product Information", link: "/productinformation" }
+        { name: "Product Info", link: "/productinfo" }
       ]
     },
     {
       name: "Sales",
       submenu: [
-        { name: "New Sales", link: "/newsales" },
-        { name: "Invoice", link: "/invoice" },
+        { name: "New Sales", link: "/SalesList" },
+        { name: "Invoice", link: "/invoicelist" },
         { name: "Conditional Sales", link: "/conditionalsales" },
         { name: "Recurring Invoice", link: "/recurringinvoice" },
         { name: "POS", link: "/pos" },

@@ -15,19 +15,12 @@ function CategoryPage() {
   return (
     <div className="category-container">
       {/* Header */}
-      <div className="category-header">
-        <h1>Category</h1>
+      <div>
+        <h3 className="heading">Category</h3>
       </div>
 
       {/* Controls Row */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "20px",
-        }}
-      >
+      <div className="controls-row">
         {/* Left Controls */}
         <div className="category-controls">
           <select>
@@ -45,21 +38,14 @@ function CategoryPage() {
         </div>
 
         {/* Right Icons */}
-        <div
-          style={{
-            display: "flex",
-            border: "1px solid #ddd",
-            borderRadius: "20px",
-            overflow: "hidden",
-          }}
-        >
-          <button style={iconButtonStyle}>
+        <div className="icon-buttons">
+          <button className="icon-btn">
             <FaPrint />
           </button>
-          <button style={iconButtonStyle}>
+          <button className="icon-btn">
             <FaUpload />
           </button>
-          <button style={iconButtonStyle}>
+          <button className="icon-btn">
             <FaColumns />
           </button>
         </div>
@@ -102,14 +88,5 @@ function CategoryPage() {
     </div>
   );
 }
-
-const iconButtonStyle = {
-  background: "none",
-  border: "none",
-  padding: "8px 12px",
-  cursor: "pointer",
-  fontSize: "14px",
-  color: "#555",
-};
 
 export default CategoryPage;

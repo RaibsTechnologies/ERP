@@ -11,9 +11,22 @@ import ModelList from "./Components_temp/Product/Model/ModelList";
 import UnitTypeList from "./Components_temp/Product/UnitType/UnitTypeList";
 import DashBoard from "./Components_temp/DashBoard/DashBoard";
 import Category from "./Components_temp/Product/Category/Category";
+import DraftProduct from "./Components_temp/Product/DraftProduct/DraftProduct";
+import ComboDraftProductList from "./Components_temp/Product/DraftProduct/ComboDraftProduct";
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
+import SalesList from "./Components_temp/Sales/NewSale/SaleList"; 
+import InvoiceList from "./Components_temp/Sales/Invoice/InvoiceList";
+import ConditionalSaleList from "./Components_temp/Sales/ConditionalSale/ConditionalSaleList";
+import RecurringInvoice from "./Components_temp/Sales/RecurringInvoice/RecurringInvoice";
+import POSSale from "./Components_temp/Sales/POS Sale/POSSale";
+import Allinvoice from "./Components_temp/Sales/All Invoice/AllInvoice";
+import Quotations from "./Components_temp/Sales/Quotations/Quotations";
+import SaleReturn from "./Components_temp/Sales/SaleReturn/SaleReturn";
+import CanceledInvoice from "./Components_temp/Sales/CanceledInvoice/CanceledInvoice";
+import DeleteReqSale from "./Components_temp/Sales/DeleteReqSale/DeleteReqSale";
 import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
+<<<<<<< HEAD
 import NewOrder from "./Components_temp/Purchase/NewOrder/NewOrder";
 import PurchaseOrder from "./Components_temp/Purchase/PurchaseOrder/PurchaseOrder";
 import DeleteRequestedPurchase from "./Components_temp/Purchase/DeleteRequestedPurchase/DeleteRequestedPurchase";
@@ -21,6 +34,29 @@ import PurchaseReturnOrderList from "./Components_temp/Purchase/PurchaseReturnOr
 import Fleet from "./Components_temp/Purchase/Fleet/Fleet";
 
 
+=======
+import RoutePlanner from "./Components_temp/Distribution/Route Planner/RoutePlanner";
+import SalesInvoice from "./Components_temp/Distribution/SalesInvoice/SalesInvoice";
+import CollectPayment from "./Components_temp/Distribution/PendingPayment/CollectPayment";
+import ApprovedPayment from "./Components_temp/Distribution/ApprovedPayment/ApprovedPayment";
+import SalesTarget from "./Components_temp/Distribution/SalesTarget/SalesTarget";
+import UserAssign from "./Components_temp/Distribution/Product Assign/UserAssign";
+import StockAdjust from "./Components_temp/Distribution/Stock Assign/StockAssign";
+import RouteList from "./Components_temp/Distribution/Route/RouteList";
+import ReceivePurchaseOrders from "./Components_temp/Inventory/ReceivePurchaseOrders/ReceivePurchaseOrders";
+import ProductCostingSales from "./Components_temp/Inventory/ProductCostingSales/ProductCostingSales";
+import StockTransfer from "./Components_temp/Inventory/StockTransfer/StockTransfer";
+import ReceiveTransferProduct from "./Components_temp/Inventory/ReceiveTransferProduct/ReceiveTransferProduct";
+import ProductMovement from "./Components_temp/Inventory/ProductMovement/ProductMovement";
+import StockAdjustments from "./Components_temp/Inventory/StockAdjustments/StockAdjustments";
+import ProductInfo from "./Components_temp/Inventory/ProductInfo/ProductInfo";
+import AddContacts from "./Components_temp/Contacts/Add Contacts/AddContacts";
+import ContactType from "./Components_temp/Contacts/ContactType/ContactType";
+import ContactCategory from "./Components_temp/Contacts/Contact Category/ContactCategory";
+import SupplierList from "./Components_temp/Contacts/Supplier/SupplierList";
+import Customer from "./Components_temp/Contacts/Customer/Customer";
+import RetailerList from "./Components_temp/Contacts/RetailerList/RetailerList";
+>>>>>>> main
 
 
 const App = () => {
@@ -69,6 +105,23 @@ const App = () => {
             </Layout>
           }
         />
+        {/* DraftProduct */}
+        <Route
+          path="/draftproduct"
+          element={
+            <Layout>
+              < DraftProduct/>
+            </Layout>
+          }
+        />
+        <Route
+          path="/draftcomboproducts"
+          element={
+            <Layout>
+              < ComboDraftProductList/>
+            </Layout>
+          }
+        />
 
         {/* Add Opening Stock */}
         <Route
@@ -89,6 +142,79 @@ const App = () => {
             </Layout>
           }
         />
+
+        {/* Receive Purchase Orders */}
+        <Route
+          path="/Receive Purchase Orders"
+          element={
+            <Layout>
+              <ReceivePurchaseOrders /> 
+            </Layout>
+          }
+        />
+
+        {/* Product Costing Sales */}
+        <Route
+          path="/productcostingsales"
+          element={
+            <Layout>
+              <ProductCostingSales />
+            </Layout>
+          }
+        />
+
+        {/* Stock Transfer*/}
+        <Route 
+          path="/stocktransfer"
+          element={
+            <Layout>
+              <StockTransfer />
+            </Layout>
+          }
+        />
+
+        {/* Receive Transfer Product */}
+        <Route
+          path="/receivetransferproduct"
+          element={
+            <Layout>
+              <ReceiveTransferProduct />
+            </Layout>
+          }
+        />
+
+        {/* Product Movement */}
+        <Route
+          path="/productmovement"
+          element={
+            <Layout>
+              <ProductMovement />
+            </Layout>
+          }
+        />
+
+        {/* Stock Adjustments */}
+        <Route
+          path="/stockadjustments"
+          element={
+            <Layout>
+              <StockAdjustments />
+            </Layout>
+          }
+        />
+
+        {/* Product Info*/}
+        <Route
+          path="/productinfo"
+          element={
+            <Layout>
+              <ProductInfo />
+            </Layout>
+          }
+        />
+
+
+
         {/* Add Category */}
         <Route
           path="/Category"
@@ -119,6 +245,7 @@ const App = () => {
           }
         />
 
+
         <Route
   path="/unittype"      // or "/unit-type"
   element={
@@ -143,6 +270,30 @@ const App = () => {
     </Layout>
   }
   />
+  <Route path="/SalesList" element={<Layout><SalesList /></Layout>} />
+  <Route path="/invoicelist" element={<Layout><InvoiceList /></Layout>} />
+  <Route path="/conditionalsales" element={<Layout><ConditionalSaleList /></Layout>} />
+  <Route path="/recurringinvoice" element={<Layout><RecurringInvoice /></Layout>} />
+  <Route path="/possale" element={<Layout><POSSale/></Layout>} />
+  <Route path="/allinvoice" element={<Layout><Allinvoice/></Layout>} />
+  <Route path="/quotations" element={<Layout><Quotations/></Layout>} />
+  <Route path="/salereturn" element={<Layout><SaleReturn/></Layout>} />
+  <Route path="/canceledinvoice" element={<Layout><CanceledInvoice/></Layout>} />
+  <Route path="/deleterequestedsale" element={<Layout><DeleteReqSale/></Layout>} />
+  <Route path="/routeplanner" element={<Layout><RoutePlanner/></Layout>} />
+  <Route path="/salesinvoice" element={<Layout><SalesInvoice /></Layout>} />
+  <Route path="/pendingpayments" element={<Layout><CollectPayment /></Layout>} />
+  <Route path="/approvedpayments" element={<Layout><ApprovedPayment /></Layout>} />
+  <Route path="/generate" element={<Layout><SalesTarget /></Layout>} />
+  <Route path="/userassign" element={<Layout><UserAssign /></Layout>} />
+  <Route path="/stockadjust" element={<Layout><StockAdjust /></Layout>} />
+  <Route path="/route" element={<Layout><RouteList /></Layout>} />
+  <Route path="/addcontacts" element={<Layout><AddContacts /></Layout>} />
+  <Route path="/contacttype" element={<Layout><ContactType /></Layout>} />
+  <Route path="/contactcategory" element={<Layout><ContactCategory /></Layout>} />
+  <Route path="/supplier" element={<Layout><SupplierList /></Layout>} />
+  <Route path="/customer" element={<Layout><Customer /></Layout>} />
+  <Route path="/retailerlist" element={<Layout><RetailerList /></Layout>} />
  
  <Route
   path="/NewOrder"
@@ -185,6 +336,7 @@ const App = () => {
     </Layout>
   }
   />
+
 
 
 

@@ -1,0 +1,103 @@
+.recurringinvoice-container {
+  background: #fff;
+  padding: 22px 32px;
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+/* Page title */
+.criteria-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #3CCE7B;
+  margin-bottom: 14px;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.topbar-left, .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.topbar-left {
+  min-width: fit-content;
+}
+.searchbar {
+  flex: 1;
+  min-width: 200px;
+}
+.searchbar input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.page-size {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.add-btn {
+  background: #3CCE7B;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.add-btn:hover {
+  background: #2eb86a;
+}
+
+/* Icon buttons */
+.topbar-icon {
+  padding: 6px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.topbar-icon:hover {
+  background: #e9ecef;
+}
+
+/* Table */
+.table-scroll-area {
+  overflow-x: auto;
+}
+.recurringinvoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+.recurringinvoice-table th,
+.recurringinvoice-table td {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: left;
+}
+.recurringinvoice-table th {
+  background: #f5fbf8;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.recurringinvoice-table tbody tr:hover {
+  background: #f8f9fa;
+}
+.empty {
+  text-align: center;
+  color: #888;
+}
+.footer {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}

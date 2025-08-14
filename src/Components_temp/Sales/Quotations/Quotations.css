@@ -1,0 +1,125 @@
+.quotations-container {
+  background: #fff;
+  padding: 22px 30px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* Page title */
+.main-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #2EBC70;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+/* Top bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.page-size {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.add-btn {
+  background: #3CCE7B;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.add-btn:hover { background: #27a968; }
+.searchbar {
+  flex: 1;
+  min-width: 200px;
+  max-width: 330px;
+  display: flex;
+  justify-content: center;
+}
+.searchbar input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+.topbar-icon {
+  padding: 6px;
+  border: 1px solid #ddd;
+  background: #f8f9fa;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  transition: background 0.17s;
+}
+.topbar-icon:hover {
+  background: #e9ecef;
+  color: #155724;
+}
+.topbar-icon svg { display: block; }
+
+/* Table */
+.table-scroll-area {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 6px;
+}
+.quotations-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+.quotations-table th, .quotations-table td {
+  padding: 12px 11px;
+  border: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+.quotations-table th {
+  background: #f6fbfa;
+  font-weight: 600;
+  color: #319b68;
+  white-space: nowrap;
+}
+.quotations-table tbody tr:hover {
+  background: #f8f9fa;
+}
+.empty {
+  text-align: center;
+  color: #bbb;
+  height: 38px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .quotations-container { padding: 10px; }
+  .table-scroll-area { border-radius: 3px; }
+  .main-title { font-size: 1.1rem; }
+  .top-bar { gap: 7px; }
+  .topbar-left, .topbar-right { gap: 5px; }
+}

@@ -15,7 +15,7 @@ function VariantList() {
 
   return (
     <div className="variant-container">
-      <h2 className="title">Variant</h2>
+      <h3 className="heading">Variant</h3>
       <div className="top-bar">
         <select
           className="page-size"

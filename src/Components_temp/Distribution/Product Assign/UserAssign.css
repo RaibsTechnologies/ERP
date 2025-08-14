@@ -1,0 +1,68 @@
+.productassign-container {
+  background: #fff;
+  padding: 26px 32px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+
+.main-title {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #14b56b; /* ERP green */
+  margin-bottom: 22px;
+}
+
+.assign-form {
+  max-width: 420px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: red;
+}
+
+.form-group select {
+  padding: 9px 12px;
+  font-size: 14px;
+  border: 1.3px solid #d3d3d3;
+  border-radius: 5px;
+  background: #fff;
+  outline: none;
+}
+
+.form-group select:focus {
+  border-color: #14b56b;
+}
+
+/* Checkbox styling like ERP */
+.assign-checkbox-row {
+  margin-top: 20px;
+}
+
+.assign-label {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #333;
+}
+
+.assign-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #14b56b; /* ERP green */
+}

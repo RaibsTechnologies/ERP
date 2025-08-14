@@ -99,7 +99,7 @@ function ComboProductList() {
           <option>50</option>
         </select>
 
-        <button className="add-btn">+ Add New Product</button>
+        <button className="btn">+ Add New Product</button>
 
         <div className="searchbar">
           <input

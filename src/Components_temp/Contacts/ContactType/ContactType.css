@@ -1,0 +1,130 @@
+.contacttype-container {
+  background: #fff;
+  padding: 28px 34px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* Title */
+.main-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #18bc77;
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+/* Top bar (dropdown, add button, icons) */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 21px;
+  flex-wrap: wrap;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-size {
+  padding: 7px 14px;
+  font-size: 14px;
+  border: 1.2px solid #cfd4d6;
+  border-radius: 5px;
+  background: #fafafa;
+  color: #21985d;
+}
+
+.add-btn {
+  background: #18bc77;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 8px #18bc7715;
+  transition: background 0.15s;
+}
+.add-btn:hover { background: #14934b; }
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar-icon {
+  width: 39px;
+  height: 39px;
+  padding: 8px;
+  border: 1.3px solid #d7e3dc;
+  background: #f6faf8;
+  border-radius: 7px;
+  cursor: pointer;
+  color: #18bc77;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.topbar-icon:hover {
+  background: #e9ecef;
+  color: #0d7e3f;
+}
+.topbar-icon svg { display: block; }
+
+/* Table */
+.table-scroll-area {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 7px;
+}
+
+.contacttype-table {
+  width: 100%;
+  min-width: 740px;
+  border-collapse: collapse;
+  margin-top: 2px;
+}
+
+.contacttype-table th,
+.contacttype-table td {
+  padding: 13px 12px;
+  border: 1.2px solid #e6e6e6;
+  font-size: 15px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.contacttype-table th {
+  background: #f5fbf8;
+  font-weight: 600;
+  color: #16bc67;
+  white-space: nowrap;
+  font-size: 1.01rem;
+}
+
+.contacttype-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.empty {
+  text-align: center;
+  color: #bdbdbd;
+  height: 40px;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .contacttype-container { padding: 11px 2vw; }
+  .main-title { font-size: 1rem; }
+  .table-scroll-area { border-radius: 4px; }
+  .contacttype-table th, .contacttype-table td { padding: 10px 4px; }
+  .top-bar { flex-direction: column; gap: 11px; }
+}

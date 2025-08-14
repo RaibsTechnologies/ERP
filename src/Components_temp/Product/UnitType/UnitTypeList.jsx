@@ -47,7 +47,7 @@ function UnitTypeList() {
 
   return (
     <div className="unit-container">
-      <h2 className="title">Unit Type</h2>
+      <h3 className="heading">Unit Type</h3>
 
       <div className="top-bar">
         <select
