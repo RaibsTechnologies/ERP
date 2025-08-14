@@ -21,6 +21,7 @@ const StockList = () => {
   return (
     <div className="stock-list-container">
       {/* Filters */}
+      <h2 className="heading">Stock List of Product</h2>
       <div className="filter-row">
         <div className="filter-group">
           <label>Warehouse</label>
@@ -84,7 +85,7 @@ const StockList = () => {
       </div>
 
       {/* Heading instead of small stats */}
-      <h3 className="stock-list-title">Stock List of Product</h3>
+      <h3 className="heading">Stock List of Product</h3>
 
       {/* Table Header Row with dropdown + search */}
       <div className="table-header-row">

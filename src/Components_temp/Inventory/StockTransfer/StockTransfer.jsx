@@ -6,8 +6,8 @@ export default function TransferredProducts() {
   return (
     <div className="transferred-container">
       {/* Header */}
-      <div className="header-section">
-        <h2 className="heading  ">Transferred Products</h2>
+      <div className="hhhhh">
+        <h2 className="heading">Transferred Products</h2>
         <button className="add-btn">+ Transferred Products</button>
       </div>
 
