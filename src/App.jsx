@@ -26,6 +26,15 @@ import SaleReturn from "./Components_temp/Sales/SaleReturn/SaleReturn";
 import CanceledInvoice from "./Components_temp/Sales/CanceledInvoice/CanceledInvoice";
 import DeleteReqSale from "./Components_temp/Sales/DeleteReqSale/DeleteReqSale";
 import AddOpeningStock from "./Components_temp/Inventory/AddOpeningStock/AddOpeningStock";
+<<<<<<< HEAD
+import NewOrder from "./Components_temp/Purchase/NewOrder/NewOrder";
+import PurchaseOrder from "./Components_temp/Purchase/PurchaseOrder/PurchaseOrder";
+import DeleteRequestedPurchase from "./Components_temp/Purchase/DeleteRequestedPurchase/DeleteRequestedPurchase";
+import PurchaseReturnOrderList from "./Components_temp/Purchase/PurchaseReturnOrderList/PurchaseReturnOrderList";
+import Fleet from "./Components_temp/Purchase/Fleet/Fleet";
+
+
+=======
 import RoutePlanner from "./Components_temp/Distribution/Route Planner/RoutePlanner";
 import SalesInvoice from "./Components_temp/Distribution/SalesInvoice/SalesInvoice";
 import CollectPayment from "./Components_temp/Distribution/PendingPayment/CollectPayment";
@@ -47,6 +56,7 @@ import ContactCategory from "./Components_temp/Contacts/Contact Category/Contact
 import SupplierList from "./Components_temp/Contacts/Supplier/SupplierList";
 import Customer from "./Components_temp/Contacts/Customer/Customer";
 import RetailerList from "./Components_temp/Contacts/RetailerList/RetailerList";
+>>>>>>> main
 
 
 const App = () => {
@@ -285,6 +295,49 @@ const App = () => {
   <Route path="/customer" element={<Layout><Customer /></Layout>} />
   <Route path="/retailerlist" element={<Layout><RetailerList /></Layout>} />
  
+ <Route
+  path="/NewOrder"
+  element={
+    <Layout>
+      <NewOrder />
+    </Layout>
+  }
+  />
+  <Route
+  path="/PurchaseOrder"
+  element={
+    <Layout>
+      <PurchaseOrder />
+    </Layout>
+  }
+  />
+  <Route
+  path="/DeleteRequestedPurchase"
+  element={
+    <Layout>
+      <DeleteRequestedPurchase />
+    </Layout>
+  }
+  />
+ 
+  <Route
+  path="/PurchaseReturnOrderList"
+  element={
+    <Layout>
+      <PurchaseReturnOrderList />
+    </Layout>
+  }
+  />
+  <Route
+  path="/Fleet"
+  element={
+    <Layout>
+      <Fleet />
+    </Layout>
+  }
+  />
+
+
 
 
         {/* 404 Fallback */}
