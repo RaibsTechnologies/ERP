@@ -20,7 +20,7 @@ export default function ProductCostingTable() {
 
   return (
     <div className="product-container">
-      <h2 className="title">Product Costing Sales</h2>
+      <h2 className="heading">Product Costing Sales</h2>
 
       <div className="table-controls">
         <select value={rowsPerPage} onChange={e => setRowsPerPage(Number(e.target.value))}>
@@ -39,14 +39,20 @@ export default function ProductCostingTable() {
           />
         </div>
 
-        <div className="icons">
-          <FaPrint />
-          <FaUpload />
-          <FaColumns />
+        <div className="icon-buttons">
+            <button className="icon-btn">
+              <FaPrint />
+            </button>
+            <button className="icon-btn">
+              <FaUpload />
+            </button>
+            <button className="icon-btn">
+              <FaColumns />
+            </button>
         </div>
       </div>
 
-      <table className="product-table">
+      <table>
         <thead>
           <tr>
             <th>↓ SL</th>

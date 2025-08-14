@@ -21,7 +21,7 @@ const StockTransfer = () => {
   return (
     <div className="tp-container">
       <div className="tp-header-row">
-        <h2 className="tp-title">Receive Transfer Product</h2>
+        <h2 className="heading">Receive Transfer Product</h2>
         <button className="tp-add-btn">+ Transferred Products</button>
       </div>
       <div className="tp-toolbar">
