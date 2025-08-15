@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaBell, FaUserCircle, FaSearch } from "react-icons/fa";
+import { FaBell, FaUserCircle, FaSearch, FaBars } from "react-icons/fa";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = ({ sidebarOpen, toggleSidebar }) => {
   return (
     <nav className="navbar-container">
-      {/* Left side - Search */}
+      {/* Left side - Hamburger + Search */}
       <div className="navbar-container_left">
+        <button
+          className={`navbar-toggle-btn ${sidebarOpen ? "desktop-hide" : ""}`}
+          onClick={toggleSidebar}
+        >
+          <FaBars />
+        </button>
         <div className="navbar-container_left-search-box">
           <input className="navbar-container_left-search-box__input" type="text" placeholder="Search..." />
           <FaSearch className="navbar-container_left-search-icon" />

@@ -1,30 +1,23 @@
+/* ===== Layout Structure ===== */
 .layout {
   display: flex;
 }
 
-/* Sidebar - fixed on left */
-.sidebar {
-  width: 240px;
-  background-color: #1e1e2f;
-  color: white;
-  flex-shrink: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-}
-
-/* Main area next to sidebar */
 .main-area {
-  margin-left: 240px; /* Push after sidebar */
+  margin-left: 240px;
   width: calc(100% - 240px);
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+.main-area.expanded {
+  margin-left: 70px;
+  width: calc(100% - 70px);
 }
 
-/* Navbar fixed at top, starting after sidebar */
+/* Navbar in layout context */
 .navbar {
   position: fixed;
   top: 0;
-  left: 240px; /* Start after sidebar */
+  left: 240px;
   width: calc(100% - 240px);
   height: 60px;
   background-color: white;
@@ -34,12 +27,38 @@
   padding: 0 15px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+.navbar.expanded {
+  left: 70px;
+  width: calc(100% - 70px);
+}
+.navbar.full {
+  left: 0;
+  width: 100%;
 }
 
-/* Main content area - below navbar */
+/* Content area */
 .content {
-  margin-top: 60px; /* Same as navbar height */
+  margin-top: 60px;
   padding: 20px;
   background-color: #f5f6fa;
   min-height: calc(100vh - 60px);
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 1024px) {
+  .main-area {
+    margin-left: 0;
+    width: 100%;
+  }
+  .navbar {
+    left: 0;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .content {
+    padding: 10px;
+  }
 }
