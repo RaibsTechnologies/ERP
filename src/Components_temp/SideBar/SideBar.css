@@ -168,3 +168,15 @@
   text-decoration: none !important;
   font-weight: 600;
 }
+.sidebar-menu a.active,
+.sidebar-menu button.active {
+  background-color: #1e40af; /* blue */
+  color: white;
+  font-weight: bold;
+}
+
+.sub-submenu a.active {
+  background-color: #2563eb;
+  color: white;
+}
+

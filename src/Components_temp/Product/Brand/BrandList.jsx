@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./BrandList.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function BrandList() {
   const [brands, setBrands] = useState([]);
@@ -73,8 +74,8 @@ function BrandList() {
   };
 
   return (
-    <div className="brand-container">
-      <h2 className="heading">Brand</h2>
+    <div className="product-container">
+      <h2 className="product-container_heading">Brand</h2>
 
       {/* Top Controls */}
       <div className="top-bar">

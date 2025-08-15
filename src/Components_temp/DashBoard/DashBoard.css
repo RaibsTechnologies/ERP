@@ -12,7 +12,7 @@
 
 
 
-.dashboard-header h2 {
+.dashboard-container_heading  {
   color: #15d38b;
   font-weight: 600;
   font-size: 22px;
@@ -40,14 +40,14 @@
   font-size: 0.9rem;
 }
 
-.dashboard-details {
+.dashboard-container__details {
   flex: 1;
   display: flex;
   gap: 16px;
 }
 
 /* Left circular shortcut buttons */
-.shortcut-grid {
+.dashboard-container__details-shortcut-grid{
   display: grid;
   grid-template-columns: repeat(4, 80px);
   gap: 16px;

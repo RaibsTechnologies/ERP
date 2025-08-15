@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./VariantList.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function VariantList() {
   const [variants, setVariants] = useState([]); // Start empty, as in screenshot
@@ -14,8 +15,8 @@ function VariantList() {
   );
 
   return (
-    <div className="variant-container">
-      <h3 className="heading">Variant</h3>
+    <div className="product-container">
+      <h3 className="product-container_heading">Variant</h3>
       <div className="top-bar">
         <select
           className="page-size"

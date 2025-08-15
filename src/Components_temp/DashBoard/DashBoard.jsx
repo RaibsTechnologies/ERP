@@ -107,10 +107,10 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-        <h3 className="heading">Dashboard</h3>
-      <div className="dashboard-details">
+        <h3 className="dashboard-container_heading">Dashboard</h3>
+      <div className="dashboard-container__details">
         {/* Left Shortcuts */}
-        <div className="shortcut-grid">
+        <div className="dashboard-container__details-shortcut-grid">
           {shortcuts.map((item) => (
             <Link to={item.directory}
               key={item.id}

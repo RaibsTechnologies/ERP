@@ -34,15 +34,15 @@
   margin-bottom: 5px;
 }
 
-select,
+ /* select,
 input[type="date"],
 input[type="text"] {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
-  width: 100%; /* Make inputs fill their container */
-}
+  width: 100%; 
+}  */
 
 /* Buttons */
 .button-section {

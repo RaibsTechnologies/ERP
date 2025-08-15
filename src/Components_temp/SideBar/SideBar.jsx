@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./SideBar.css";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function SideBar() {
   const [openMainMenu, setOpenMainMenu] = useState(null);
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const location = useLocation();
+  const { pathname } = location;
 
   const toggleMainMenu = (menu) => {
     setOpenMainMenu(openMainMenu === menu ? null : menu);
-    setOpenSubMenu(null); // close any submenus when main changes
+    setOpenSubMenu(null);
   };
 
   const toggleSubMenu = (submenu) => {
@@ -248,7 +250,10 @@ function SideBar() {
 
       <div className="sidebar-menu">
         {/* Dashboard */}
-        <Link to="/dashboard" className="menu-btn">
+        <Link
+          to="/dashboard"
+          className={`menu-btn ${pathname === "/dashboard" ? "active" : ""}`}
+        >
           Dashboard
         </Link>
 
@@ -257,17 +262,27 @@ function SideBar() {
           <div key={menu.name} className="menu-section">
             {/* Main menu */}
             <button
-              className="menu-btn toggle"
+              className={`menu-btn toggle ${
+                openMainMenu === menu.name ? "open" : ""
+              }`}
               onClick={() => toggleMainMenu(menu.name)}
             >
               {menu.name}
-              <span className={`arrow ${openMainMenu === menu.name ? "open" : ""}`}>
+              <span
+                className={`arrow ${
+                  openMainMenu === menu.name ? "open" : ""
+                }`}
+              >
                 <MdOutlineKeyboardArrowRight />
               </span>
             </button>
 
             {/* Submenu */}
-            <div className={`submenu ${openMainMenu === menu.name ? "open" : ""}`}>
+            <div
+              className={`submenu ${
+                openMainMenu === menu.name ? "open" : ""
+              }`}
+            >
               {menu.submenu.map((item) => {
                 const hasChildren = item.children && item.children.length > 0;
 
@@ -276,24 +291,45 @@ function SideBar() {
                     {hasChildren ? (
                       <>
                         <button
-                          className="submenu-btn toggle nested"
+                          className={`submenu-btn toggle nested ${
+                            openSubMenu === item.name ? "open" : ""
+                          }`}
                           onClick={() => toggleSubMenu(item.name)}
                         >
                           {item.name}
-                          <span className={`arrow ${openSubMenu === item.name ? "open" : ""}`}>
+                          <span
+                            className={`arrow ${
+                              openSubMenu === item.name ? "open" : ""
+                            }`}
+                          >
                             <MdOutlineKeyboardArrowRight />
                           </span>
                         </button>
-                        <div className={`sub-submenu ${openSubMenu === item.name ? "open" : ""}`}>
+                        <div
+                          className={`sub-submenu ${
+                            openSubMenu === item.name ? "open" : ""
+                          }`}
+                        >
                           {item.children.map((child) => (
-                            <Link key={child.name} to={child.link}>
+                            <Link
+                              key={child.name}
+                              to={child.link}
+                              className={
+                                pathname === child.link ? "active" : ""
+                              }
+                            >
                               {child.name}
                             </Link>
                           ))}
                         </div>
                       </>
                     ) : (
-                      <Link to={item.link}>{item.name}</Link>
+                      <Link
+                        to={item.link}
+                        className={pathname === item.link ? "active" : ""}
+                      >
+                        {item.name}
+                      </Link>
                     )}
                   </div>
                 );

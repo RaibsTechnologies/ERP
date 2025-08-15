@@ -33,18 +33,18 @@
   color: red;
 }
 
-.form-group select {
+/* .form-group select {
   padding: 9px 12px;
   font-size: 14px;
   border: 1.3px solid #d3d3d3;
   border-radius: 5px;
   background: #fff;
   outline: none;
-}
+} */
 
-.form-group select:focus {
+/* .form-group select:focus {
   border-color: #14b56b;
-}
+} */
 
 /* Checkbox styling like ERP */
 .assign-checkbox-row {
@@ -61,8 +61,8 @@
   color: #333;
 }
 
-.assign-label input[type="checkbox"] {
+/* .assign-label input[type="checkbox"] {
   width: 18px;
   height: 18px;
   accent-color: #14b56b; /* ERP green */
-}
+/* }  */

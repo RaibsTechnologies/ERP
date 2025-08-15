@@ -1,5 +1,6 @@
 import React from "react";
-import "./AddProduct.css";
+// import "./AddProduct.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 const togglesData = [
   { key: "neverDiminishing", label: "Never Diminishing" },

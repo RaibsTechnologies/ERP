@@ -1,218 +1,186 @@
-/* Main container */
-.container {
-  font-family: "Segoe UI", sans-serif;
-  max-width: 1200px;
+/* Main container styles */
+.product-container {
+  font-family: Arial, sans-serif;
+  max-width: 1000px;
   margin: 0 auto;
-  background: #fff;
-  padding: 20px 24px;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  background: white;
 }
 
-/* Heading */
-.heading {
-  color: #15d38b;
-  font-weight: 600;
-  font-size: 20px;
+.product-container_heading {
+  font-size: 24px;
   margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form layout */
+.product-container_addproduct-row {
+  display: flex;
+  gap: 20px;
+}
+
+.product-container_addproduct-row_form {
+  flex: 2;
 }
 
 /* Section titles */
 .sectionTitle {
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin: 20px 0 10px 0;
   color: #333;
-  border-left: 4px solid #15d38b;
-  padding-left: 8px;
+  font-weight: bold;
 }
 
-/* Layout rows */
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 28px;
+/* Input groups */
+.inputGroupFull, .inputGroup {
+  margin-bottom: 15px;
 }
 
-.form {
-  flex: 1;
+.inputGroupFull label, .inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
 }
 
-/* Inline form rows */
+/* Input fields */
+.input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Inline rows */
 .inlineRow {
   display: flex;
-  gap: 16px;
-  margin-bottom: 14px;
+  gap: 15px;
 }
 
-.inputGroup,
-.inputGroupFull {
+.inlineRow .inputGroup {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 14px;
 }
 
-/* Inputs */
-.input {
-  padding: 8px 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  outline: none;
-  font-size: 14px;
-  background: #fafafa;
-  transition: all 0.2s ease;
-}
-.input:focus {
-  border-color: #15d38b;
-  background: #fff;
-  box-shadow: 0 0 0 2px rgba(21, 211, 139, 0.1);
-}
-
-/* Image upload area */
-.photoUploadBox {
-  margin: 16px 0;
-}
-
-.uploadArea {
-  border: 2px dashed #b9eeda;
-  border-radius: 8px;
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: #666;
-  cursor: pointer;
-  background: #f9fffc;
-  padding: 14px;
-  gap: 6px;
-  text-align: center;
-}
-
-.browseBtn {
-  background: #15d38b;
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 6px;
+/* Divider line */
+hr {
   border: none;
-  font-size: 13px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s ease;
-}
-.browseBtn:hover {
-  background: #12b97b;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
 }
 
-.imgPreview {
-  max-height: 90px;
-  max-width: 140px;
-  border-radius: 6px;
-  object-fit: contain;
+/* Image upload section */
+.image-upload-container {
+  border: 1px dashed #ddd;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 4px;
 }
 
-/* Button group */
+.image-upload-container p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Buttons */
 .buttonRow {
   display: flex;
   gap: 10px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.greenBtn,
-.orangeBtn {
-  color: #fff;
-  padding: 7px 16px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 13px;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  margin-top: 30px;
 }
 
 .greenBtn {
-  background: #19c287;
-}
-.greenBtn:hover {
-  background: #15a872;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .orangeBtn {
-  background: #ff7416;
-}
-.orangeBtn:hover {
-  background: #e4630e;
-}
-
-/* Toggle panel */
-.typeBox {
-  min-width: 240px;
-  max-width: 300px;
-  background: #fafbfa;
-  border-radius: 10px;
-  padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(21, 211, 139, 0.06);
-  border: 1px solid #e6f5ef;
-  position: sticky;
-  top: 20px;
-  align-self: flex-start;
+  background-color: #FF9800;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
+/* Toggle switches container */
 .toggleRow {
+  flex: 1;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Toggle switches styling */
+.toggle-item {
+  margin-bottom: 15px;
+}
+
+.toggle-label {
   display: flex;
   align-items: center;
-  margin: 12px 0;
-  justify-content: space-between;
-  font-size: 13px;
-  color: #333;
+  cursor: pointer;
 }
 
-.qIcon {
-  background: #eee;
-  border-radius: 50%;
-  padding: 0 4px;
-  font-size: 10px;
-  margin-left: 6px;
-  cursor: help;
-}
-
-/* Toggle switch */
-.switch {
+.toggle-switch {
   position: relative;
   display: inline-block;
-  width: 36px;
-  height: 18px;
+  width: 50px;
+  height: 24px;
+  margin-right: 10px;
 }
-.switch input {
-  display: none;
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
-.slider {
+
+.toggle-slider {
   position: absolute;
-  cursor: pointer; 
-  top: 0; left: 0; right: 0; bottom: 0;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #ccc;
-  transition: 0.3s;
-  border-radius: 18px;
+  transition: .4s;
+  border-radius: 24px;
 }
-.slider:before {
+
+.toggle-slider:before {
   position: absolute;
   content: "";
-  height: 14px;
-  width: 14px;
-  left: 2px;
-  bottom: 2px;
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
   background-color: white;
+  transition: .4s;
   border-radius: 50%;
-  transition: 0.3s;
 }
-.switch input:checked + .slider {
-  background-color: #4fd69c;
+
+input:checked + .toggle-slider {
+  background-color: #4CAF50;
 }
-.switch input:checked + .slider:before {
-  transform: translateX(18px);
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Dropdown arrow styling */
+select.input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
 }

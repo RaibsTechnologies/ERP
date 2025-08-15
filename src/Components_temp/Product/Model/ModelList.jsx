@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ModelList.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function ModelList() {
   const [models, setModels] = useState([]);
@@ -45,8 +46,8 @@ function ModelList() {
   );
 
   return (
-    <div className="model-container">
-      <h3 className="heading">Model</h3>
+    <div className="product-container">
+      <h3 className="product-container_heading">Model</h3>
 
       <div className="top-bar">
         <select value={pageSize} onChange={(e) => setPageSize(e.target.value)} className="page-size">

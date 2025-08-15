@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./PrintLableList.css";
+import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function PrintLabel() {
   const [selectedProduct, setSelectedProduct] = useState("");
@@ -45,9 +46,9 @@ function PrintLabel() {
   };
 
   return (
-    <div className="print-label-container">
+    <div className="product-container">
       {/* Table Header */}
-      <h3 className="heading">Print Label</h3>
+      <h3 className="product-container_heading">Print Label</h3>
       <div className="label-table-header">
         <div className="header-cell">Product Name</div>
         <div className="header-cell">No. Of Label</div>
