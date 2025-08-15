@@ -40,7 +40,7 @@
   border: none;
   outline: none;
   color: #2C2C2E;
-  padding: 8px 20px;
+  padding: 8px 16px;
   text-align: left;
   font-size: 13px;
   font-weight: 700;
@@ -87,9 +87,10 @@
 .submenu a,
 .submenu-btn {
   display: block;
-  padding: 4px 20px;
+  padding: 4px 18px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 24px;
   font-weight: 600;
   color: #2C2C2E;
   text-decoration: none;
@@ -108,7 +109,8 @@
   width: 100%;
   color: #2C2C2E;
   text-align: left;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 24px;
   padding: 6px 20px;
   cursor: pointer;
   display: flex;
@@ -141,7 +143,9 @@
 .sub-submenu a {
   display: block;
   padding: 6px 20px;
-  font-size: 12px;
+  font-size: 12git px;
+
+  line-height: 24px;
   color: #2C2C2E;
   background-color: #fff;
   text-decoration: none;
