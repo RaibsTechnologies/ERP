@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./BrandList.css";
+// import "./BrandList.css";
+import { FaSearch, FaPrint, FaUpload, FaColumns, FaDownload ,FaArrowDown } from "react-icons/fa";
 import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function BrandList() {
@@ -40,11 +41,11 @@ function BrandList() {
       setLoading(true);
       const apiUrl = "https://your-backend-api.com/api/brands"; // Replace when backend is ready
       const response = await fetch(apiUrl);
-      
+
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      
+
       const data = await response.json();
-      
+
       if (Array.isArray(data)) {
         setBrands(data);
       } else if (Array.isArray(data.brands)) {
@@ -78,45 +79,38 @@ function BrandList() {
       <h2 className="product-container_heading">Brand</h2>
 
       {/* Top Controls */}
-      <div className="top-bar">
-        <select className="page-size" value={pageSize} onChange={(e) => setPageSize(e.target.value)}>
+      <div className="product-controls_row">
+        <select className="product-select" value={pageSize} onChange={(e) => setPageSize(e.target.value)}>
           <option value="10">10</option>
           <option value="25">25</option>
           <option value="50">50</option>
         </select>
 
-        <button className="add-btn">+ Add Brand</button>
+        <button className="product-Btn">+ Add Brand</button>
 
-        <div className="searchbar">
+        <div className="product-searchbar">
           <input
             type="text"
             placeholder="SEARCH"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            className="product-search_input"
           />
         </div>
 
         {/* Action Icons */}
-        <div className="action-icons">
-          <button className="icon-btn" title="Print/Export">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
-            </svg>
+        <div className="product-icon_btns">
+          <button className="product-icon_btn">
+            <FaPrint />
           </button>
-          <button className="icon-btn" title="Import">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 14v5c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-5h2v5h14v-5h2zM17 7l-1.41 1.41L13 5.83V16h-2V5.83L8.41 8.41 7 7l5-5 5 5z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaUpload />
           </button>
-          <button className="icon-btn" title="Download">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 10v9c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-9h2v9h14v-9h2zM17 7l-5 5-5-5h3V1h4v6h3z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaDownload />
           </button>
-          <button className="icon-btn" title="Delete">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaColumns />
           </button>
         </div>
       </div>
@@ -125,14 +119,16 @@ function BrandList() {
       {loading ? (
         <p style={{ textAlign: "center", padding: "20px" }}>Loading brands...</p>
       ) : (
-        <table className="brand-table">
+        <div className="product-table-wrapper">
+
+        <table className="product-table">
           <thead>
             <tr>
-              <th>SL</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th className="product-table_heading">SL</th>
+              <th className="product-table_heading">Name</th>
+              <th className="product-table_heading">Description</th>
+              <th className="product-table_heading">Status</th>
+              <th className="product-table_heading">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -145,17 +141,17 @@ function BrandList() {
             ) : (
               filteredBrands.slice(0, parseInt(pageSize)).map((brand, idx) => (
                 <tr key={brand.id || idx}>
-                  <td>{idx + 1}</td>
-                  <td>{brand.name}</td>
-                  <td>{brand.description || ""}</td>
-                  <td>
+                  <td className="product-table_dat">{idx + 1}</td>
+                  <td className="product-table_dat">{brand.name}</td>
+                  <td className="product-table_dat">{brand.description || ""}</td>
+                  <td className="product-table_dat">
                     <span className={`status ${brand.status.toLowerCase()}`}>
                       {brand.status}
                     </span>
                   </td>
                   <td>
-                    <select 
-                      className="action-select"
+                    <select
+                      className="product-select"
                       onChange={(e) => handleActionSelect(brand.id, e.target.value)}
                       defaultValue=""
                     >
@@ -170,6 +166,7 @@ function BrandList() {
             )}
           </tbody>
         </table>
+        </div>
       )}
 
       {/* Footer Info */}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./PrintLableList.css";
+// import "./PrintLableList.css";
 import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function PrintLabel() {

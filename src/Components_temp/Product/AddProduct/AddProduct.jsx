@@ -17,26 +17,26 @@ const initialToggles = {
 };
 
 const AddProduct = () => {
-    const [form, setForm] = useState({
-  categorize: "Inventory (Track Stock)",
-  productType: "Single",
-  productName: "",
-  category: "",
-  sku: "",
-  sellingPrice: "",
-  unit: "",
-  productPhoto: null,
-  hsnSac: "",
-  purchaseTax: "",
-  costPrice: "",
-  minSellingPrice: "",
-  brand: "",
-  model: "",
-  warranty: "",
-  barcodeType: "C39",
-  alertQuantity: 0,
-  description: ""
-});
+  const [form, setForm] = useState({
+    categorize: "Inventory (Track Stock)",
+    productType: "Single",
+    productName: "",
+    category: "",
+    sku: "",
+    sellingPrice: "",
+    unit: "",
+    productPhoto: null,
+    hsnSac: "",
+    purchaseTax: "",
+    costPrice: "",
+    minSellingPrice: "",
+    brand: "",
+    model: "",
+    warranty: "",
+    barcodeType: "C39",
+    alertQuantity: 0,
+    description: ""
+  });
 
   const [toggles, setToggles] = useState(initialToggles);
 
@@ -231,6 +231,72 @@ const AddProduct = () => {
             </div>
           </div>
 
+          
+
+          {/* ===== Additional Info ===== */}
+          <h4 className="sectionTitle">Additional Info</h4>
+
+          <div className="inlineRow">
+            <div className="inputGroup">
+              <label>Brand</label>
+              <select name="brand" value={form.brand} onChange={handleChange} className="input">
+                <option value="">Select Brand</option>
+                <option value="Brand1">Brand 1</option>
+                <option value="Brand2">Brand 2</option>
+              </select>
+            </div>
+
+            <div className="inputGroup">
+              <label>Model</label>
+              <select name="model" value={form.model} onChange={handleChange} className="input">
+                <option value="">Select Model</option>
+                <option value="Model1">Model 1</option>
+                <option value="Model2">Model 2</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="inlineRow">
+            <div className="inputGroup">
+              <label>Warranty</label>
+              <select name="warranty" value={form.warranty} onChange={handleChange} className="input">
+                <option value="">Select one</option>
+                <option value="6 months">6 Months</option>
+                <option value="1 year">1 Year</option>
+                <option value="2 years">2 Years</option>
+              </select>
+            </div>
+
+            <div className="inputGroup">
+              <label>Barcode Type</label>
+              <select name="barcodeType" value={form.barcodeType} onChange={handleChange} className="input">
+                <option value="C39">C39 (Support for BarCode)</option>
+                <option value="QR">QR Code</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="inputGroup">
+            <label>
+              Alert Quantity <span title="Minimum quantity before stock alert">ℹ️</span>
+            </label>
+            <input
+              type="number"
+              name="alertQuantity"
+              value={form.alertQuantity}
+              onChange={handleChange}
+              className="input"
+            />
+          </div>
+          <div className="text-editor">
+            <Toolbar onFormat={handleFormat} />
+            <textarea
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              className="editor-textarea"
+            />
+          </div>
+
           {/* Buttons */}
           <div className="buttonRow">
             <button type="button" className="product-Btn" onClick={() => handleSubmit("Save & New")}>
@@ -247,77 +313,13 @@ const AddProduct = () => {
             </button>
           </div>
 
-               {/* ===== Additional Info ===== */}
-<h4 className="sectionTitle">Additional Info</h4>
-
-<div className="inlineRow">
-  <div className="inputGroup">
-    <label>Brand</label>
-    <select name="brand" value={form.brand} onChange={handleChange} className="input">
-      <option value="">Select Brand</option>
-      <option value="Brand1">Brand 1</option>
-      <option value="Brand2">Brand 2</option>
-    </select>
-  </div>
-
-  <div className="inputGroup">
-    <label>Model</label>
-    <select name="model" value={form.model} onChange={handleChange} className="input">
-      <option value="">Select Model</option>
-      <option value="Model1">Model 1</option>
-      <option value="Model2">Model 2</option>
-    </select>
-  </div>
-</div>
-
-<div className="inlineRow">
-  <div className="inputGroup">
-    <label>Warranty</label>
-    <select name="warranty" value={form.warranty} onChange={handleChange} className="input">
-      <option value="">Select one</option>
-      <option value="6 months">6 Months</option>
-      <option value="1 year">1 Year</option>
-      <option value="2 years">2 Years</option>
-    </select>
-  </div>
-
-  <div className="inputGroup">
-    <label>Barcode Type</label>
-    <select name="barcodeType" value={form.barcodeType} onChange={handleChange} className="input">
-      <option value="C39">C39 (Support for BarCode)</option>
-      <option value="QR">QR Code</option>
-    </select>
-  </div>
-</div>
-
-<div className="inputGroup">
-  <label>
-    Alert Quantity <span title="Minimum quantity before stock alert">ℹ️</span>
-  </label>
-  <input
-    type="number"
-    name="alertQuantity"
-    value={form.alertQuantity}
-    onChange={handleChange}
-    className="input"
-  />
-</div>
-   <div className="text-editor">
-      <Toolbar onFormat={handleFormat} />
-      <textarea
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        className="editor-textarea"
-      />
-    </div>
-
 
         </form>
-        
+
 
         {/* ===== Right: Toggles ===== */}
         <TypeToggles className="toggleRow" toggles={toggles} onToggle={handleToggle} />
-   
+
 
       </div>
     </div>

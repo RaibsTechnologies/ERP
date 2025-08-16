@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./DraftProduct.css";
+// import "./DraftProduct.css";
 import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function ComboProductList() {
@@ -78,14 +78,14 @@ function ComboProductList() {
 
       {/* Tabs */}
       <div className="tabs">
-        <Link 
-          to="/productlist" 
+        <Link
+          to="/productlist"
           className={location.pathname === "/productlist" ? "tab active" : "tab"}
         >
           PRODUCTS
         </Link>
-        <Link 
-          to="/comboproducts" 
+        <Link
+          to="/comboproducts"
           className={location.pathname === "/comboproducts" ? "tab active" : "tab"}
         >
           COMBO PRODUCT
@@ -93,106 +93,109 @@ function ComboProductList() {
       </div>
 
       {/* Top Controls */}
-      <div className="top-bar">
-        <select className="page-size">
+      <div className="product-controls_row ">
+        <select className="product-select">
           <option>10</option>
           <option>25</option>
           <option>50</option>
         </select>
 
-        <button className="btn">+ Add New Product</button>
+        <button className="product-Btn">+ Add New Product</button>
 
-        <div className="searchbar">
+        <div className="product-searchbar">
           <input
             type="text"
             placeholder="SEARCH"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            className="product-search_input"
           />
+          <button className="product-icon_btn">
+            <FaSearch />
+          </button>
         </div>
 
         {/* Action Icons */}
-        <div className="action-icons">
-          <button className="icon-btn" title="Print/Export">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
-            </svg>
+        <div className="product-icon_btns">
+          <button className="product-icon_btn">
+            <FaPrint />
           </button>
-          <button className="icon-btn" title="Import">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 14v5c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-5h2v5h14v-5h2zM17 7l-1.41 1.41L13 5.83V16h-2V5.83L8.41 8.41 7 7l5-5 5 5z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaUpload />
           </button>
-          <button className="icon-btn" title="Download">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 10v9c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-9h2v9h14v-9h2zM17 7l-5 5-5-5h3V1h4v6h3z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaDownload />
           </button>
-          <button className="icon-btn" title="Delete">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaColumns />
           </button>
         </div>
       </div>
 
       {/* Combo Products Table */}
       {loading ? (
-        <p style={{ textAlign: "center", padding: "20px" }}>Loading combo products...</p>
+        <p style={{ textAlign: "center", padding: "20px" }}>Loading products...</p>
       ) : (
-        <table className="product-table">
-          <thead>
-            <tr>
-              <th>SL</th>
-              <th>Image</th>
-              <th>Name</th>
-              <th>SKU</th>
-              <th>Price</th>
-              <th>Regular Price</th>
-              <th>Total Product</th>
-              <th>Status</th>
-              <th>Enable</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredProducts.length === 0 ? (
+        <div className="product-table-wrapper">
+          <table className="product-table">
+            <thead>
               <tr>
-                <td colSpan={10} className="no-products">
-                  No combo products found.
-                </td>
+                <th className="product-table_heading">SL</th>
+                <th className="product-table_heading">Image</th>
+                <th className="product-table_heading">Name</th>
+                <th className="product-table_heading">SKU</th>
+                <th className="product-table_heading">Brand</th>
+                <th className="product-table_heading">Model</th>
+                <th className="product-table_heading">Purchase Price</th>
+                <th className="product-table_heading">Selling Price</th>
+                <th className="product-table_heading">Min Price</th>
+                <th className="product-table_heading">Stock</th>
+                <th className="product-table_heading">Supplier</th>
+                <th className="product-table_heading">Product Type</th>
+                <th className="product-table_heading">Category</th>
+                <th className="product-table_heading">Stock Alert</th>
               </tr>
-            ) : (
-              filteredProducts.map((combo, idx) => (
-                <tr key={combo.id || idx}>
-                  <td>{idx + 1}</td>
-                  <td>
-                    {combo.image ? (
-                      <img
-                        src={combo.image}
-                        alt={combo.name}
-                        className="product-image"
-                      />
-                    ) : (
-                      "-"
-                    )}
-                  </td>
-                  <td>{combo.name}</td>
-                  <td>{combo.sku}</td>
-                  <td>₹{combo.price}</td>
-                  <td>₹{combo.regularPrice}</td>
-                  <td>{combo.totalProduct}</td>
-                  <td>{combo.status}</td>
-                  <td>{combo.enable ? "Yes" : "No"}</td>
-                  <td>
-                    <button className="action-btn edit">✏️</button>
-                    <button className="action-btn delete">🗑️</button>
+            </thead>
+            <tbody>
+              {filteredProducts.length === 0 ? (
+                <tr>
+                  <td colSpan={14} className="no-products">
+                    No products found.
                   </td>
                 </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+              ) : (
+                filteredProducts.map((product, idx) => (
+                  <tr key={product.id || idx}>
+                    <td className="product-table_dat">{idx + 1}</td>
+                    <td className="product-table_dat">
+                      {product.image ? (
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="product-image"
+                        />
+                      ) : (
+                        "-"
+                      )}
+                    </td>
+                    <td className="product-table_dat">{product.name}</td>
+                    <td className="product-table_dat">{product.sku}</td>
+                    <td className="product-table_dat">{product.brand}</td>
+                    <td className="product-table_dat">{product.model}</td>
+                    <td className="product-table_dat">₹{product.purchasePrice}</td>
+                    <td className="product-table_dat">₹{product.sellingPrice}</td>
+                    <td className="product-table_dat">₹{product.minPrice}</td>
+                    <td className="product-table_dat">{product.stock}</td>
+                    <td className="product-table_dat">{product.supplier}</td>
+                    <td className="product-table_dat">{product.productType}</td>
+                    <td className="product-table_dat">{product.category}</td>
+                    <td className="product-table_dat">{product.stockAlert}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

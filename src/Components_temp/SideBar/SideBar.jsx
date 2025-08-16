@@ -3,7 +3,7 @@ import "./SideBar.css";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
-function SideBar() {
+function SideBar({isOpen }) {
   const [openMainMenu, setOpenMainMenu] = useState(null);
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const location = useLocation();
@@ -242,7 +242,7 @@ function SideBar() {
   ];
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? "" : "collapsed"}`}>
       <div className="sidebar-header">
         <h1>Raibs ERP</h1>
         <img src="/vite.svg" alt="Vite logo" className="logo" />

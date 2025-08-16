@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./VariantList.css";
+// import "./VariantList.css";
+import { FaSearch, FaPrint, FaUpload, FaColumns, FaDownload ,FaArrowDown } from "react-icons/fa";
 import "../Product.css"; // Assuming you have a common CSS file for product styles
 
 function VariantList() {
@@ -17,9 +18,9 @@ function VariantList() {
   return (
     <div className="product-container">
       <h3 className="product-container_heading">Variant</h3>
-      <div className="top-bar">
+      <div className="product-controls_row">
         <select
-          className="page-size"
+          className="product-select"
           value={pageSize}
           onChange={e => setPageSize(Number(e.target.value))}
         >
@@ -27,47 +28,45 @@ function VariantList() {
           <option value={25}>25</option>
           <option value={50}>50</option>
         </select>
-        <button className="add-btn">+ Add New Variant</button>
-        <div className="searchbar">
+        <button className="product-Btn">+ Add New Variant</button>
+        <div className="product-searchbar">
           <input
             type="text"
             placeholder="SEARCH"
             value={search}
             onChange={e => setSearch(e.target.value)}
+            className="product-search_input"
           />
+          <button className="product-icon_btn">
+            <FaSearch />
+          </button>
         </div>
-        <div className="action-icons">
-          {/* Print */}
-          <button className="icon-btn" title="Print / Export">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zM16 19H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1
-               1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
-            </svg>
+        <div className="product-icon_btns">
+          <button className="product-icon_btn">
+            <FaPrint />
           </button>
-          {/* Import */}
-          <button className="icon-btn" title="Import">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 14v5c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-5h2v5h14v-5h2zM17 7l-1.41 1.41L13 5.83V16h-2V5.83
-                        L8.41 8.41 7 7l5-5 5 5z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaUpload />
           </button>
-          {/* Download */}
-          <button className="icon-btn" title="Download">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 10v9c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2v-9h2v9h14v-9h2zM17 7l-5 5-5-5h3V1h4v6h3z"/>
-            </svg>
+          <button className="product-icon_btn">
+            <FaDownload />
+          </button>
+          <button className="product-icon_btn">
+            <FaColumns />
           </button>
         </div>
       </div>
 
-      <table className="variant-table">
+    <div className="product-table-wrapper">
+
+      <table className="product-table">
         <thead>
           <tr>
-            <th>SL</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Action</th>
+            <th className="product-table_heading">SL</th>
+            <th className="product-table_heading">Name</th>
+            <th className="product-table_heading">Description</th>
+            <th className="product-table_heading">Status</th>
+            <th className="product-table_heading">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -78,16 +77,16 @@ function VariantList() {
           ) : (
             filtered.slice(0, pageSize).map((v, idx) => (
               <tr key={v.id || idx}>
-                <td>{idx + 1}</td>
-                <td>{v.name}</td>
-                <td>{v.description}</td>
-                <td>
+                <td className="product-table_dat">{idx + 1}</td>
+                <td className="product-table_dat">{v.name}</td>
+                <td className="product-table_dat">{v.description}</td>
+                <td className="product-table_dat">
                   <span className={`status ${v.status ? v.status.toLowerCase() : ""}`}>
                     {v.status}
                   </span>
                 </td>
                 <td>
-                  <select className="action-select" defaultValue="">
+                  <select className="product-select" defaultValue="">
                     <option value="" disabled>SELECT</option>
                     <option value="edit">Edit</option>
                     <option value="delete">Delete</option>
@@ -98,6 +97,7 @@ function VariantList() {
           )}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

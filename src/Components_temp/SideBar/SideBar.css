@@ -1,152 +1,24 @@
 /* ===== Sidebar Base ===== */
 .sidebar {
-  width: 230px;
-  background: #ffffff; /* White background */
-  color: #374151; /* Dark gray text */
+  width: 240px;
+  color: #2C2C2E;
+  position: fixed;
+  top: 0;
+  left: 0;
   height: 100vh;
+  flex-shrink: 0;
+  background: #f3f4f6;
+  border-right: 1px solid #2C2C2E;
   overflow-y: auto;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  border-right: 1px solid #e5e7eb; /* Light gray border */
+  transition: transform 0.3s ease, width 0.3s ease;
 }
 
-/* ===== Section Divider ===== */
-.menu-section {
-  border-bottom: none;
+/* Collapsed state */
+.sidebar.collapsed {
+  width: 70px;
 }
 
-/* ===== Main Menu Buttons ===== */
-.menu-btn {
-  width: 100%;
-  background: none;
-  border: none;
-  outline: none;
-  color: #f3f4f6;
-  padding: 12px 20px;
-  text-align: left;
-  font-size: 12px;
-  font-weight: 600; /* Bold */
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.2s ease;
-}
-
-.menu-btn:hover {
-  color: #374151;
-  background: #f3f4f6; /* Light gray hover */
-}
-
-/* Remove underline from links */
-.menu-btn a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ===== Arrow Icon Animation ===== */
-.arrow {
-  font-size: 14px;
-  transition: transform 0.3s ease;
-  color: #6b7280; /* Muted gray arrow */
-}
-.arrow.open {
-  transform: rotate(90deg);
-}
-
-/* ===== First-Level Submenu ===== */
-.submenu {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-.submenu.open {
-  max-height: 500px;
-}
-
-.submenu-item {
-  padding-left: 0;
-}
-
-/* ===== Submenu Links ===== */
-.submenu a,
-.submenu-btn {
-  display: block;
-  padding: 10px 20px;
-  font-size: 12px;
-  color: #f3f4f6;
-  text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.submenu a:hover {
-  color: #374151;
-  background-color: #f3f4f6;
-}
-
-/* ===== Active State (Green Highlight) ===== */
-.submenu a.active,
-.submenu-btn.active {
-  background: #10b981; /* Green */
-  color: #ffffff; /* White text */
-  border-radius: 4px;
-}
-
-/* ===== Nested Menu Buttons ===== */
-.submenu-btn.toggle {
-  background: none;
-  border: none;
-  outline: none;
-  width: 100%;
-  color: #f3f4f6;
-  text-align: left;
-  font-size: 12px;
-  padding: 10px 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background 0.2s ease;
-}
-.submenu-btn.toggle:hover {
-  background-color: #f3f4f6;
-  color: #374151;
-}
-
-/* ===== Nested Menu Arrow Animation ===== */
-.submenu-btn.toggle .arrow {
-  font-size: 12px;
-  transition: transform 0.3s ease;
-}
-.submenu-btn.toggle .arrow.open {
-  transform: rotate(90deg);
-}
-
-/* ===== Second-Level Submenu ===== */
-.sub-submenu {
-  max-height: 0;
-  overflow: hidden;
-  /* background-color: #f9fafb; Very light gray */
-  padding-left: 20px;
-  border-left: 2px solid #e5e7eb;
-  transition: max-height 0.35s ease;
-}
-.sub-submenu.open {
-  max-height: 300px;
-}
-
-.sub-submenu a {
-  display: block;
-  padding: 8px 16px;
-  font-size: 13px;
-  color: #4b5563;
-  text-decoration: none;
-  transition: background 0.2s ease, padding-left 0.2s ease;
-}
-.sub-submenu a:hover {
-  background-color: #f3f4f6;
-}
-
-/* ===== Scrollbar Style ===== */
+/* Scrollbar */
 .sidebar::-webkit-scrollbar {
   width: 6px;
 }
@@ -158,25 +30,161 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Links Styling ===== */
-.sidebar a {
-  text-decoration: none !important;
+/* ===== Menu styles ===== */
+.menu-section {
+  border-bottom: none;
+}
+.menu-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: #2C2C2E;
+  padding: 8px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+  border-radius: 8px;
+}
+.menu-btn:hover {
+  color: #fff;
+  background: #10b981;
+}
+.menu-btn a {
+  text-decoration: none;
   color: inherit;
 }
-.sidebar a.active,
-.sidebar a[aria-current="page"] {
-  text-decoration: none !important;
-  font-weight: 600;
+
+/* Arrow icon */
+.arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  color: #6b7280;
 }
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+/* First-level submenu */
+.submenu {
+  max-height: 0;
+  background-color: #fff;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.submenu.open {
+  max-height: 500px;
+}
+.submenu-item {
+  padding-left: 0;
+}
+.submenu a,
+.submenu-btn {
+  display: block;
+  padding: 4px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #2C2C2E;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.submenu a:hover {
+  color: #fff;
+  background-color: #10b981;
+}
+
+/* Nested submenu toggle */
+.submenu-btn.toggle {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #2C2C2E;
+  text-align: left;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 6px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.submenu-btn.toggle:hover {
+  color: #fff;
+  background-color: #10b981;
+}
+.submenu-btn.toggle .arrow {
+  font-size: 12px;
+}
+.submenu-btn.toggle .arrow.open {
+  transform: rotate(90deg);
+}
+
+/* Second-level submenu */
+.sub-submenu {
+  max-height: 0;
+  overflow: hidden;
+  /* padding-left: 20px; */
+  /* border-left: 2px solid #e5e7eb; */
+  border-radius: 8px;
+  transition: max-height 0.35s ease;
+}
+.sub-submenu.open {
+  max-height: 300px;
+}
+.sub-submenu a {
+  display: block;
+  padding: 6px 20px;
+  font-size: 12git px;
+
+  line-height: 24px;
+  color: #2C2C2E;
+  background-color: #fff;
+  text-decoration: none;
+}
+.sub-submenu a:hover {
+  color: #fff;
+  background-color: #10b981;
+}
+
+/* Active links */
+.sidebar a.active,
+.sidebar a[aria-current="page"],
 .sidebar-menu a.active,
 .sidebar-menu button.active {
-  background-color: #1e40af; /* blue */
+  background-color: #10b981;
   color: white;
   font-weight: bold;
 }
-
 .sub-submenu a.active {
-  background-color: #2563eb;
+  background-color: #10b981;
   color: white;
 }
 
+/* Responsive - overlay on tablet/mobile */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 2000;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+  }
+}
