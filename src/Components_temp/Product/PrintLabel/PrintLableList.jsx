@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-// import "./PrintLableList.css";
-import "../Product.css"; // Assuming you have a common CSS file for product styles
+import "./PrintLableList.css";
+import "../Product.css"; // Common product styles
 
 function PrintLabel() {
   const [selectedProduct, setSelectedProduct] = useState("");
@@ -9,13 +9,13 @@ function PrintLabel() {
     productName: true,
     price: true,
     productVariation: true,
-    businessName: true
+    businessName: true,
   });
   const [fontSizes, setFontSizes] = useState({
     productName: 12,
     price: 12,
     variant: 12,
-    businessName: 12
+    businessName: 12,
   });
   const [exTax, setExTax] = useState("Ex. Tax");
 
@@ -47,20 +47,23 @@ function PrintLabel() {
 
   return (
     <div className="product-container">
-      {/* Table Header */}
+      {/* Title */}
       <h3 className="product-container_heading">Print Label</h3>
+
+      {/* Table Header */}
       <div className="label-table-header">
         <div className="header-cell">Product Name</div>
         <div className="header-cell">No. Of Label</div>
         <div className="header-cell">Action</div>
       </div>
 
-      {/* Row */}
+      {/* Table Row */}
       <div className="label-table-row">
         <div className="cell">
           <select
             value={selectedProduct}
             onChange={(e) => setSelectedProduct(e.target.value)}
+           className="product-search_input"
           >
             <option value="">Select Product</option>
             {products.map((p) => (
@@ -76,19 +79,20 @@ function PrintLabel() {
             type="number"
             value={numLabels}
             onChange={(e) => setNumLabels(e.target.value)}
+            className="product-search_input"
           />
         </div>
 
-        <div className="cell action-buttons">
-          <button className="delete-btn">🗑</button>
-          <button className="drag-btn">⇅</button>
+        <div className="cell">
+          <button className=".product-icon_btn">🗑</button>
+          <button className=".product-icon_btn">⇅</button>
         </div>
       </div>
 
       {/* Info Section */}
       <h3 className="info-title">Information to Show In Label</h3>
       <div className="info-grid">
-        {/* Left Column */}
+        {/* Product Name */}
         <div className="info-item">
           <label>
             <input
@@ -106,10 +110,12 @@ function PrintLabel() {
               name="productName"
               value={fontSizes.productName}
               onChange={handleFontSizeChange}
+              className="product-search_input"
             />
           </div>
         </div>
 
+        {/* Price */}
         <div className="info-item">
           <label>
             <input
@@ -120,7 +126,11 @@ function PrintLabel() {
             />{" "}
             Price
           </label>
-          <select value={exTax} onChange={(e) => setExTax(e.target.value)}>
+          <select
+            value={exTax}
+            onChange={(e) => setExTax(e.target.value)}
+            className="product-search_input"
+          >
             <option>Ex. Tax</option>
             <option>Inc. Tax</option>
           </select>
@@ -131,11 +141,12 @@ function PrintLabel() {
               name="price"
               value={fontSizes.price}
               onChange={handleFontSizeChange}
+              className="product-search_input"
             />
           </div>
         </div>
 
-        {/* Right Column */}
+        {/* Product Variation */}
         <div className="info-item">
           <label>
             <input
@@ -153,10 +164,12 @@ function PrintLabel() {
               name="variant"
               value={fontSizes.variant}
               onChange={handleFontSizeChange}
+              className="product-search_input"
             />
           </div>
         </div>
 
+        {/* Business Name */}
         <div className="info-item">
           <label>
             <input
@@ -174,6 +187,7 @@ function PrintLabel() {
               name="businessName"
               value={fontSizes.businessName}
               onChange={handleFontSizeChange}
+              className="product-search_input"
             />
           </div>
         </div>
@@ -184,7 +198,7 @@ function PrintLabel() {
       <select
         value={barcodeSetting}
         onChange={(e) => setBarcodeSetting(e.target.value)}
-        style={{ width: "100%", padding: "6px", marginBottom: "16px" }}
+        className="product-search_input"
       >
         <option>
           20 Labels per Sheet, Sheet Size: 8.5" x 11", Label Size: 4" x 1", Labels per sheet: 20
@@ -194,42 +208,32 @@ function PrintLabel() {
         </option>
       </select>
 
-      <h3 className="info-title">
+      {/* Barcode Size */}
+      <h3 className="info-title barcode-title">
         Barcode Size <span role="img" aria-label="barcode">📊</span>
       </h3>
-      <div style={{ display: "flex", gap: "20px", marginBottom: "20px" }}>
-        <div style={{ flex: 1 }}>
+      <div className="barcode-size">
+        <div className="barcode-item">
           <label>Max Width : Inches *</label>
           <input
             type="number"
             value={barcodeWidth}
             onChange={(e) => setBarcodeWidth(e.target.value)}
-            style={{ width: "100%", padding: "6px" }}
+            className="product-search_input"
           />
         </div>
-        <div style={{ flex: 1 }}>
+        <div className="barcode-item">
           <label>Height : Inches *</label>
           <input
             type="number"
             value={barcodeHeight}
             onChange={(e) => setBarcodeHeight(e.target.value)}
-            style={{ width: "100%", padding: "6px" }}
+            className="product-search_input"
           />
         </div>
       </div>
 
-      <button
-        onClick={handleGenerateLabel}
-        style={{
-          backgroundColor: "#15d38b",
-          color: "#fff",
-          padding: "10px 20px",
-          border: "none",
-          borderRadius: "6px",
-          cursor: "pointer",
-          fontSize: "1rem"
-        }}
-      >
+      <button onClick={handleGenerateLabel} className="product-Btn">
         ✓ Generate Label
       </button>
     </div>
