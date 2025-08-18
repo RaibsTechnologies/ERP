@@ -87,7 +87,7 @@ const AddProduct = () => {
                 name="categorize"
                 value={form.categorize}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               >
                 <option>Inventory (Track Stock)</option>
                 <option>Non-Inventory</option>
@@ -100,7 +100,7 @@ const AddProduct = () => {
                 name="productType"
                 value={form.productType}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               >
                 <option>Single</option>
                 <option>Variant</option>
@@ -117,7 +117,7 @@ const AddProduct = () => {
               name="productName"
               value={form.productName}
               onChange={handleChange}
-              className="input"
+              className="product-search_input"
             />
           </div>
 
@@ -128,7 +128,7 @@ const AddProduct = () => {
                 name="category"
                 value={form.category}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               >
                 <option value="">Select Category</option>
                 <option value="Electronics">Electronics</option>
@@ -142,7 +142,7 @@ const AddProduct = () => {
                 name="sku"
                 value={form.sku}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               />
             </div>
           </div>
@@ -155,7 +155,7 @@ const AddProduct = () => {
                 name="sellingPrice"
                 value={form.sellingPrice}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               />
             </div>
             <div className="inputGroup">
@@ -164,7 +164,7 @@ const AddProduct = () => {
                 name="unit"
                 value={form.unit}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               >
                 <option value="">Select Unit</option>
                 <option value="Piece">Piece</option>
@@ -186,7 +186,7 @@ const AddProduct = () => {
                 name="hsnSac"
                 value={form.hsnSac}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               >
                 <option value="">Select one</option>
                 <option value="HSN1234">HSN1234</option>
@@ -199,7 +199,7 @@ const AddProduct = () => {
                 name="purchaseTax"
                 value={form.purchaseTax}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               >
                 <option value="">Select one</option>
                 <option value="5%">GST 5%</option>
@@ -216,7 +216,7 @@ const AddProduct = () => {
                 name="costPrice"
                 value={form.costPrice}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               />
             </div>
             <div className="inputGroup">
@@ -226,7 +226,7 @@ const AddProduct = () => {
                 name="minSellingPrice"
                 value={form.minSellingPrice}
                 onChange={handleChange}
-                className="input"
+                className="product-search_input"
               />
             </div>
           </div>
@@ -239,7 +239,7 @@ const AddProduct = () => {
           <div className="inlineRow">
             <div className="inputGroup">
               <label>Brand</label>
-              <select name="brand" value={form.brand} onChange={handleChange} className="input">
+              <select name="brand" value={form.brand} onChange={handleChange} className="product-search_input">
                 <option value="">Select Brand</option>
                 <option value="Brand1">Brand 1</option>
                 <option value="Brand2">Brand 2</option>
@@ -248,7 +248,7 @@ const AddProduct = () => {
 
             <div className="inputGroup">
               <label>Model</label>
-              <select name="model" value={form.model} onChange={handleChange} className="input">
+              <select name="model" value={form.model} onChange={handleChange} className="product-search_input">
                 <option value="">Select Model</option>
                 <option value="Model1">Model 1</option>
                 <option value="Model2">Model 2</option>
@@ -259,7 +259,7 @@ const AddProduct = () => {
           <div className="inlineRow">
             <div className="inputGroup">
               <label>Warranty</label>
-              <select name="warranty" value={form.warranty} onChange={handleChange} className="input">
+              <select name="warranty" value={form.warranty} onChange={handleChange} className="product-search_input">
                 <option value="">Select one</option>
                 <option value="6 months">6 Months</option>
                 <option value="1 year">1 Year</option>
@@ -269,7 +269,7 @@ const AddProduct = () => {
 
             <div className="inputGroup">
               <label>Barcode Type</label>
-              <select name="barcodeType" value={form.barcodeType} onChange={handleChange} className="input">
+              <select name="barcodeType" value={form.barcodeType} onChange={handleChange} className="product-search_input">
                 <option value="C39">C39 (Support for BarCode)</option>
                 <option value="QR">QR Code</option>
               </select>
@@ -285,7 +285,7 @@ const AddProduct = () => {
               name="alertQuantity"
               value={form.alertQuantity}
               onChange={handleChange}
-              className="input"
+              className="product-search_input"
             />
           </div>
           <div className="text-editor">
