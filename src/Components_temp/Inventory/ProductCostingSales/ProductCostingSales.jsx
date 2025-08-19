@@ -1,63 +1,64 @@
 import React from "react";
-import "./ProductCostingSales.css";
 import { FaSearch, FaPrint, FaUpload, FaColumns } from "react-icons/fa";
 
 export default function ProductCostSales() {
   return (
-    <div className="transferred-container">
+    <div className="inventory-container">
       {/* Header */}
-      <div className="hhhhh">
-        <h2 className="heading">Product Costing Sales</h2>
-      </div>
+      <h2 className="inventory-header">Product Costing Sales</h2>
 
       {/* Controls */}
-      <div className="table-controls">
-        <select>
+      <div className="inventory-controls_row">
+        <select className="inventory-select">
           <option>10</option>
           <option>25</option>
           <option>50</option>
         </select>
 
-        <div className="search-box">
-          <FaSearch   className="search-icon" />
-          <input type="text" placeholder="SEARCH" />
+        <div className="inventory-searchbar">
+          <input type="text" placeholder="SEARCH" className="inventory-search_input" />
+          <button className="inventory-icon_btn">
+            <FaSearch />
+          </button>
         </div>
 
-        <div className="icon-buttons">
-            <button className="icon-btn">
-              <FaPrint />
-            </button>
-            <button className="icon-btn">
-              <FaUpload />
-            </button>
-            <button className="icon-btn">
-              <FaColumns />
-            </button>
+        <div className="inventory-icon_btns">
+          <button className="inventory-icon_btn">
+            <FaPrint />
+          </button>
+          <button className="inventory-icon_btn">
+            <FaUpload />
+          </button>
+          <button className="inventory-icon_btn">
+            <FaColumns />
+          </button>
         </div>
       </div>
 
       {/* Table */}
-      <table className="products-table">
-        <thead>
-          <tr>
-            <th>↓ SL</th>
-            <th>↓ Image</th>
-            <th>↓ Type</th>
-            <th>↓Address</th>
-            <th>↓ Product Name</th>
-            <th>↓ SKU</th>
-            <th>↓ Brand</th>
-            <th>↓ Model</th>
-            <th>↓ Previous Stock</th>
-            <th>↓ Newly added Stock</th>
-            <th>↓  Last Costing Price (unit)</th>
-            <th>↓  New Costing Price (unit)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* Empty state - no data */}
-        </tbody>
-      </table>
+      <div className="inventory-table-wrapper">
+        <table className="inventory-table">
+          <thead>
+            <tr>
+              <th className="inventory-table_heading">↓ SL</th>
+              <th className="inventory-table_heading">↓ Image</th>
+              <th className="inventory-table_heading">↓ Type</th>
+              <th className="inventory-table_heading">↓ Address</th>
+              <th className="inventory-table_heading">↓ Product Name</th>
+              <th className="inventory-table_heading">↓ SKU</th>
+              <th className="inventory-table_heading">↓ Brand</th>
+              <th className="inventory-table_heading">↓ Model</th>
+              <th className="inventory-table_heading">↓ Previous Stock</th>
+              <th className="inventory-table_heading">↓ Newly added Stock</th>
+              <th className="inventory-table_heading">↓  Last Costing Price (unit)</th>
+              <th className="inventory-table_heading">↓  New Costing Price (unit)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* Empty state - no data */}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
