@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./ReceivePurchaseOrders.css";
 import { FaSearch, FaPrint, FaUpload, FaColumns, FaPlus } from "react-icons/fa";
 
 export default function ReceivePurchaseOrders() {
@@ -45,81 +44,85 @@ export default function ReceivePurchaseOrders() {
   };
 
   return (
-    <div className="purchase-orders-container">
+    <div className="inventory-container">
       {/* Title */}
-      <h2 className="heading">Receive Purchase Orders</h2>
+      <h2 className="inventory-header">Receive Purchase Orders</h2>
 
       {/* Controls Row */}
-      <div className="table-controls">
-        <select className="rows-select">
+      <div className="inventory-controls_row">
+        <select className="inventory-select">
           <option>10</option>
           <option>25</option>
           <option>50</option>
         </select>
 
-        <button className="add-btn" onClick={handleNewOrder}>
+        <button className="inventory-Btn" onClick={handleNewOrder}>
           <FaPlus style={{ marginRight: "6px" }} /> New Order
         </button>
 
-        <div className="search-box">
-          <FaSearch   className="search-icon"  />
-          <input type="text" placeholder="SEARCH" />
+        <div className="inventory-searchbar">
+          <input type="text" placeholder="SEARCH" className="inventory-search_input" />
+          <button className="inventory-icon_btn">
+            <FaSearch />
+          </button>
         </div>
 
-        <div className="icon-buttons">
-            <button className="icon-btn">
-              <FaPrint />
-            </button>
-            <button className="icon-btn">
-              <FaUpload />
-            </button>
-            <button className="icon-btn">
-              <FaColumns />
-            </button>
+        <div className="inventory-icon_btns">
+          <button className="inventory-icon_btn">
+            <FaPrint />
+          </button>
+          <button className="inventory-icon_btn">
+            <FaUpload />
+          </button>
+          <button className="inventory-icon_btn">
+            <FaColumns />
+          </button>
         </div>
       </div>
 
       {/* Table */}
-      <table className="orders-table">
-        <thead>
-          <tr>
-            <th>↓ SL</th>
-            <th>↓ Date</th>
-            <th>↓ Supplier Name</th>
-            <th>↓ Invoice No</th>
-            <th>↓ Is Approved</th>
-            <th>↓ Is Added to Stock</th>
-            <th>↓ Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {loading ? (
+      <div className="inventory-table-wrapper">
+        <table className="inventory-table">
+          <thead>
             <tr>
-              <td colSpan="7" style={{ textAlign: "center" }}>
-                Loading...
-              </td>
+              <th className="inventory-table_heading">↓ SL</th>
+              <th className="inventory-table_heading">↓ Date</th>
+              <th className="inventory-table_heading">↓ Supplier Name</th>
+              <th className="inventory-table_heading">↓ Invoice No</th>
+              <th className="inventory-table_heading">↓ Is Approved</th>
+              <th className="inventory-table_heading">↓ Is Added to Stock</th>
+              <th className="inventory-table_heading">↓ Action</th>
             </tr>
-          ) : orders.length > 0 ? (
-            orders.map((order, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{order.date}</td>
-                <td>{order.supplierName}</td>
-                <td>{order.invoiceNo}</td>
-                <td>{order.isApproved ? "Yes" : "No"}</td>
-                <td>{order.isAddedToStock ? "Yes" : "No"}</td>
-                <td>...</td>
+          </thead>
+          <tbody>
+            {loading ? (
+              <tr>
+                <td colSpan="7" style={{ textAlign: "center" }}>
+                  Loading...
+                </td>
               </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="7" style={{ textAlign: "center" }}>
-                No data available
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+            ) : orders.length > 0 ? (
+              orders.map((order, index) => (
+                <tr key={index}>
+                  <td className="inventory-table_dat">{index + 1}</td>
+                  <td className="inventory-table_dat">{order.date}</td>
+                  <td className="inventory-table_dat">{order.supplierName}</td>
+                  <td className="inventory-table_dat">{order.invoiceNo}</td>
+                  <td className="inventory-table_dat">{order.isApproved ? "Yes" : "No"}</td>
+                  <td className="inventory-table_dat">{order.isAddedToStock ? "Yes" : "No"}</td>
+                  <td className="inventory-table_dat">...</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td className="inventory-table_dat" colSpan="7" style={{ textAlign: "center" }}>
+                  No data available
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

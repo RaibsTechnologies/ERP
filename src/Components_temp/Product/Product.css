@@ -83,7 +83,7 @@
   padding: 6px 10px;
   width: 70px;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 0px;
   font-size: 13px;
   background: #fff;
@@ -106,7 +106,7 @@
 
 .product-search_input {
   border: none;
-  border-bottom: 1px solid #000000;
+  border: 1px solid #000000;
   outline: none;
   background: none;
   font-size: 13px;
