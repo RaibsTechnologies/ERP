@@ -1,0 +1,94 @@
+/* Register.css */
+
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f9fa; /* light background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-form {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  text-align: center;
+}
+
+.register-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.register-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.register-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.register-input:focus {
+  border-color: #4a90e2; /* blue highlight */
+}
+
+.register-button {
+  width: 100%;
+  padding: 0.85rem;
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-button:hover {
+  background: #357ab7;
+}
+
+.register-message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.register-message.success {
+  color: green;
+}
+
+.register-message.error {
+  color: red;
+}
+
+.login-text {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-link {
+  color: #4a90e2;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
