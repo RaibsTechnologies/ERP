@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
 import Login from "./Components_temp/LoginPage/Login";
 import AddProduct from "./Components_temp/Product/AddProduct/AddProduct";
@@ -15,7 +15,7 @@ import DraftProduct from "./Components_temp/Product/DraftProduct/DraftProduct";
 import ComboDraftProductList from "./Components_temp/Product/DraftProduct/ComboDraftProduct";
 import VariantList from "./Components_temp/Product/Variant/VariantList";
 import PrintLabelList from "./Components_temp/Product/PrintLabel/PrintLableList";
-import SalesList from "./Components_temp/Sales/NewSale/SaleList"; 
+import SalesList from "./Components_temp/Sales/NewSale/SaleList";
 import InvoiceList from "./Components_temp/Sales/Invoice/InvoiceList";
 import ConditionalSaleList from "./Components_temp/Sales/ConditionalSale/ConditionalSaleList";
 import RecurringInvoice from "./Components_temp/Sales/RecurringInvoice/RecurringInvoice";
@@ -31,8 +31,6 @@ import PurchaseOrder from "./Components_temp/Purchase/PurchaseOrder/PurchaseOrde
 import DeleteRequestedPurchase from "./Components_temp/Purchase/DeleteRequestedPurchase/DeleteRequestedPurchase";
 import PurchaseReturnOrderList from "./Components_temp/Purchase/PurchaseReturnOrderList/PurchaseReturnOrderList";
 import Fleet from "./Components_temp/Purchase/Fleet/Fleet";
-
-
 import RoutePlanner from "./Components_temp/Distribution/Route Planner/RoutePlanner";
 import SalesInvoice from "./Components_temp/Distribution/SalesInvoice/SalesInvoice";
 import CollectPayment from "./Components_temp/Distribution/PendingPayment/CollectPayment";
@@ -54,14 +52,17 @@ import ContactCategory from "./Components_temp/Contacts/Contact Category/Contact
 import SupplierList from "./Components_temp/Contacts/Supplier/SupplierList";
 import Customer from "./Components_temp/Contacts/Customer/Customer";
 import RetailerList from "./Components_temp/Contacts/RetailerList/RetailerList";
+import Register from "./Components_temp/Register/Register";
 
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         {/* Login Page */}
         <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
         {/* Dashboard */}
         <Route
@@ -107,7 +108,7 @@ const App = () => {
           path="/draftproduct"
           element={
             <Layout>
-              < DraftProduct/>
+              < DraftProduct />
             </Layout>
           }
         />
@@ -115,7 +116,7 @@ const App = () => {
           path="/draftcomboproducts"
           element={
             <Layout>
-              < ComboDraftProductList/>
+              < ComboDraftProductList />
             </Layout>
           }
         />
@@ -145,7 +146,7 @@ const App = () => {
           path="/Receive Purchase Orders"
           element={
             <Layout>
-              <ReceivePurchaseOrders /> 
+              <ReceivePurchaseOrders />
             </Layout>
           }
         />
@@ -161,7 +162,7 @@ const App = () => {
         />
 
         {/* Stock Transfer*/}
-        <Route 
+        <Route
           path="/stocktransfer"
           element={
             <Layout>
@@ -244,95 +245,95 @@ const App = () => {
 
 
         <Route
-  path="/unittype"      // or "/unit-type"
-  element={
-    <Layout>
-      <UnitTypeList />
-    </Layout>
-  }
-/>    
-<Route
-  path="/variantList"      // or "/variant-list"
-  element={
-    <Layout>
-      <VariantList />
-    </Layout>
-  }
-/>
-<Route
-  path="/printLabel"
-  element={
-    <Layout>
-      <PrintLabelList />
-    </Layout>
-  }
-  />
-  <Route path="/SalesList" element={<Layout><SalesList /></Layout>} />
-  <Route path="/invoicelist" element={<Layout><InvoiceList /></Layout>} />
-  <Route path="/conditionalsales" element={<Layout><ConditionalSaleList /></Layout>} />
-  <Route path="/recurringinvoice" element={<Layout><RecurringInvoice /></Layout>} />
-  <Route path="/possale" element={<Layout><POSSale/></Layout>} />
-  <Route path="/allinvoice" element={<Layout><Allinvoice/></Layout>} />
-  <Route path="/quotations" element={<Layout><Quotations/></Layout>} />
-  <Route path="/salereturn" element={<Layout><SaleReturn/></Layout>} />
-  <Route path="/canceledinvoice" element={<Layout><CanceledInvoice/></Layout>} />
-  <Route path="/deleterequestedsale" element={<Layout><DeleteReqSale/></Layout>} />
-  <Route path="/routeplanner" element={<Layout><RoutePlanner/></Layout>} />
-  <Route path="/salesinvoice" element={<Layout><SalesInvoice /></Layout>} />
-  <Route path="/pendingpayments" element={<Layout><CollectPayment /></Layout>} />
-  <Route path="/approvedpayments" element={<Layout><ApprovedPayment /></Layout>} />
-  <Route path="/generate" element={<Layout><SalesTarget /></Layout>} />
-  <Route path="/userassign" element={<Layout><UserAssign /></Layout>} />
-  <Route path="/stockadjust" element={<Layout><StockAdjust /></Layout>} />
-  <Route path="/route" element={<Layout><RouteList /></Layout>} />
-  <Route path="/addcontacts" element={<Layout><AddContacts /></Layout>} />
-  <Route path="/contacttype" element={<Layout><ContactType /></Layout>} />
-  <Route path="/contactcategory" element={<Layout><ContactCategory /></Layout>} />
-  <Route path="/supplier" element={<Layout><SupplierList /></Layout>} />
-  <Route path="/customer" element={<Layout><Customer /></Layout>} />
-  <Route path="/retailerlist" element={<Layout><RetailerList /></Layout>} />
- 
- <Route
-  path="/NewOrder"
-  element={
-    <Layout>
-      <NewOrder />
-    </Layout>
-  }
-  />
-  <Route
-  path="/PurchaseOrder"
-  element={
-    <Layout>
-      <PurchaseOrder />
-    </Layout>
-  }
-  />
-  <Route
-  path="/DeleteRequestedPurchase"
-  element={
-    <Layout>
-      <DeleteRequestedPurchase />
-    </Layout>
-  }
-  />
- 
-  <Route
-  path="/PurchaseReturnOrderList"
-  element={
-    <Layout>
-      <PurchaseReturnOrderList />
-    </Layout>
-  }
-  />
-  <Route
-  path="/Fleet"
-  element={
-    <Layout>
-      <Fleet />
-    </Layout>
-  }
-  />
+          path="/unittype"      // or "/unit-type"
+          element={
+            <Layout>
+              <UnitTypeList />
+            </Layout>
+          }
+        />
+        <Route
+          path="/variantList"      // or "/variant-list"
+          element={
+            <Layout>
+              <VariantList />
+            </Layout>
+          }
+        />
+        <Route
+          path="/printLabel"
+          element={
+            <Layout>
+              <PrintLabelList />
+            </Layout>
+          }
+        />
+        <Route path="/SalesList" element={<Layout><SalesList /></Layout>} />
+        <Route path="/invoicelist" element={<Layout><InvoiceList /></Layout>} />
+        <Route path="/conditionalsales" element={<Layout><ConditionalSaleList /></Layout>} />
+        <Route path="/recurringinvoice" element={<Layout><RecurringInvoice /></Layout>} />
+        <Route path="/possale" element={<Layout><POSSale /></Layout>} />
+        <Route path="/allinvoice" element={<Layout><Allinvoice /></Layout>} />
+        <Route path="/quotations" element={<Layout><Quotations /></Layout>} />
+        <Route path="/salereturn" element={<Layout><SaleReturn /></Layout>} />
+        <Route path="/canceledinvoice" element={<Layout><CanceledInvoice /></Layout>} />
+        <Route path="/deleterequestedsale" element={<Layout><DeleteReqSale /></Layout>} />
+        <Route path="/routeplanner" element={<Layout><RoutePlanner /></Layout>} />
+        <Route path="/salesinvoice" element={<Layout><SalesInvoice /></Layout>} />
+        <Route path="/pendingpayments" element={<Layout><CollectPayment /></Layout>} />
+        <Route path="/approvedpayments" element={<Layout><ApprovedPayment /></Layout>} />
+        <Route path="/generate" element={<Layout><SalesTarget /></Layout>} />
+        <Route path="/userassign" element={<Layout><UserAssign /></Layout>} />
+        <Route path="/stockadjust" element={<Layout><StockAdjust /></Layout>} />
+        <Route path="/route" element={<Layout><RouteList /></Layout>} />
+        <Route path="/addcontacts" element={<Layout><AddContacts /></Layout>} />
+        <Route path="/contacttype" element={<Layout><ContactType /></Layout>} />
+        <Route path="/contactcategory" element={<Layout><ContactCategory /></Layout>} />
+        <Route path="/supplier" element={<Layout><SupplierList /></Layout>} />
+        <Route path="/customer" element={<Layout><Customer /></Layout>} />
+        <Route path="/retailerlist" element={<Layout><RetailerList /></Layout>} />
+
+        <Route
+          path="/NewOrder"
+          element={
+            <Layout>
+              <NewOrder />
+            </Layout>
+          }
+        />
+        <Route
+          path="/PurchaseOrder"
+          element={
+            <Layout>
+              <PurchaseOrder />
+            </Layout>
+          }
+        />
+        <Route
+          path="/DeleteRequestedPurchase"
+          element={
+            <Layout>
+              <DeleteRequestedPurchase />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/PurchaseReturnOrderList"
+          element={
+            <Layout>
+              <PurchaseReturnOrderList />
+            </Layout>
+          }
+        />
+        <Route
+          path="/Fleet"
+          element={
+            <Layout>
+              <Fleet />
+            </Layout>
+          }
+        />
 
 
 
@@ -343,7 +344,7 @@ const App = () => {
           element={<h2 style={{ textAlign: "center" }}>Page not found</h2>}
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
