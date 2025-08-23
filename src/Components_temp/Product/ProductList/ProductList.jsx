@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FaSearch, FaPrint, FaUpload, FaColumns, FaDownload ,FaArrowDown } from "react-icons/fa";
+import { FaSearch, FaPrint, FaUpload, FaColumns, FaDownload, FaArrowDown } from "react-icons/fa";
 
 // import "./ProductList.css";
 import "../Product.css"; // Assuming you have a common CSS file for product styles
+import axios from "axios";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
@@ -12,76 +13,36 @@ function ProductList() {
   const [search, setSearch] = useState("");
   const location = useLocation();
 
-  // Dummy fallback data for regular products
-  const demoProducts = [
-    {
-      id: 1,
-      image: "https://via.placeholder.com/50",
-      name: "Sample Product A",
-      sku: "SKU001",
-      brand: "BrandX",
-      model: "ModelA",
-      purchasePrice: 100,
-      sellingPrice: 120,
-      minPrice: 90,
-      stock: 50,
-      supplier: "Supplier1",
-      productType: "TypeA",
-      category: "CategoryA",
-      stockAlert: 5,
-    },
-    {
-      id: 2,
-      image: "https://via.placeholder.com/50",
-      name: "Sample Product B",
-      sku: "SKU002",
-      brand: "BrandY",
-      model: "ModelB",
-      purchasePrice: 150,
-      sellingPrice: 200,
-      minPrice: 130,
-      stock: 20,
-      supplier: "Supplier2",
-      productType: "TypeB",
-      category: "CategoryB",
-      stockAlert: 3,
-    },
-  ];
+
 
   useEffect(() => {
-    const apiUrl = "https://your-backend-api.com/api/products"; // Replace when backend is ready
+    const apiUrl = "http://localhost:5000/api/productList/fetchData";
 
-    async function fetchProducts() {
+    const fetchProducts = async () => {
       try {
-        setLoading(true);
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
+        const response = await axios.get(apiUrl, {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        });
 
-        if (Array.isArray(data)) {
-          setProducts(data);
-        } else if (Array.isArray(data.products)) {
-          setProducts(data.products);
-        } else {
-          setProducts([]);
-        }
-        setError(null);
-      } catch (err) {
-        console.warn("Error fetching products:", err);
-        setError("Could not fetch products — showing sample data.");
-        setProducts(demoProducts);
-      } finally {
+        console.log("API Response:", response.data); // should log your DB rows
+        setProducts(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Fetch error:", error);
+        setError(error.message);
         setLoading(false);
       }
-    }
+    };
 
     fetchProducts();
   }, []);
 
-  const filteredProducts = products.filter(
-    (product) =>
-      product.name.toLowerCase().includes(search.toLowerCase()) ||
-      product.sku.toLowerCase().includes(search.toLowerCase())
+
+  const filteredProducts = products.filter((product) =>
+    Object.values(product).some((value) =>
+      String(value).toLowerCase().includes(search.toLowerCase())
+    )
   );
 
   return (
@@ -152,56 +113,35 @@ function ProductList() {
           <table className="product-table">
             <thead>
               <tr>
-                <th className="product-table_heading">SL</th>
-                <th className="product-table_heading">Image</th>
-                <th className="product-table_heading">Name</th>
-                <th className="product-table_heading">SKU</th>
-                <th className="product-table_heading">Brand</th>
-                <th className="product-table_heading">Model</th>
-                <th className="product-table_heading">Purchase Price</th>
-                <th className="product-table_heading">Selling Price</th>
-                <th className="product-table_heading">Min Price</th>
-                <th className="product-table_heading">Stock</th>
-                <th className="product-table_heading">Supplier</th>
-                <th className="product-table_heading">Product Type</th>
-                <th className="product-table_heading">Category</th>
-                <th className="product-table_heading">Stock Alert</th>
+                {products.length > 0 &&
+                  Object.keys(products[0]).map((key) => (
+                    <th key={key}>{key.toUpperCase()}</th>
+                  ))}
               </tr>
             </thead>
             <tbody>
               {filteredProducts.length === 0 ? (
                 <tr>
-                  <td colSpan={14} className="no-products">
+                  <td colSpan={products.length > 0 ? Object.keys(products[0]).length : 1} className="no-products">
                     No products found.
                   </td>
                 </tr>
               ) : (
                 filteredProducts.map((product, idx) => (
                   <tr key={product.id || idx}>
-                    <td className="product-table_dat">{idx + 1}</td>
-                    <td className="product-table_dat">
-                      {product.image ? (
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="product-image"
-                        />
-                      ) : (
-                        "-"
-                      )}
-                    </td>
-                    <td className="product-table_dat">{product.name}</td>
-                    <td className="product-table_dat">{product.sku}</td>
-                    <td className="product-table_dat">{product.brand}</td>
-                    <td className="product-table_dat">{product.model}</td>
-                    <td className="product-table_dat">₹{product.purchasePrice}</td>
-                    <td className="product-table_dat">₹{product.sellingPrice}</td>
-                    <td className="product-table_dat">₹{product.minPrice}</td>
-                    <td className="product-table_dat">{product.stock}</td>
-                    <td className="product-table_dat">{product.supplier}</td>
-                    <td className="product-table_dat">{product.productType}</td>
-                    <td className="product-table_dat">{product.category}</td>
-                    <td className="product-table_dat">{product.stockAlert}</td>
+                    {Object.keys(product).map((key) => (
+                      <td key={key}>
+                        {key === "image" ? (
+                          product.image ? (
+                            <img src={product.image} alt={product.name} className="product-image" />
+                          ) : (
+                            "-"
+                          )
+                        ) : (
+                          product[key]
+                        )}
+                      </td>
+                    ))}
                   </tr>
                 ))
               )}
