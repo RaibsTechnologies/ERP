@@ -10,27 +10,34 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  const { user, login, loading } = useContext(AuthContext);
+  // const { user, login, loading } = useContext(AuthContext);
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   console.log({ email, password });
+  //   try {
+  //     const isSuccess = await login( {email, password} );
+  //     if (isSuccess) {
+  //       navigate("/dashboard");
+  //     } else {
+  //       setMessage("Invalid email or password. Please try again.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Login error:", error);
+  //     setMessage("Invalid email or password. Please try again.");
+  //   }
+  // };
+
+  // if (loading) {
+  //   return <div>Loading...</div>; // Show loading state while fetching user
+  // }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log({ email, password });
-    try {
-      const isSuccess = await login( {email, password} );
-      if (isSuccess) {
-        navigate("/dashboard");
-      } else {
-        setMessage("Invalid email or password. Please try again.");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      setMessage("Invalid email or password. Please try again.");
+    if(email === "Raibs@email.com" && password === "Raibs1234"){
+      navigate("/dashboard");
     }
-  };
+    }
 
-  if (loading) {
-    return <div>Loading...</div>; // Show loading state while fetching user
-  }
 
   return (
     <div className="login-wrapper">
